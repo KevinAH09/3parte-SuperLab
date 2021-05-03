@@ -14,7 +14,7 @@ ARCHIVO DE CONFIGURACIÓN GLOBAL.
   // ------ Variables que definen el nombre actual del hosting -------
 
   $myhost="http://localhost";
-  $myproject="SuperLAB1-Parte3/3parte-SuperLab";
+  $myproject="3parte-SuperLab";
   $mysite=$myhost . "/" . $myproject;
 
   date_default_timezone_set('America/Costa_Rica');

@@ -14,7 +14,7 @@
 		{
 			$this->servidor = "localhost";
 			$this->usuario = "root";
-			$this->clave = "";
+			$this->clave = "1234";
 			$this->base_datos = "bd_twitter";
 			$this->conectar_base_datos();
 		}
