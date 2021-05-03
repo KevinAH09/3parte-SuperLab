@@ -40,8 +40,8 @@ if (isset($_GET['eliminarPost'])) {
 
 	</head>
 
-<body>
-	<?php require_once(__VWS_PATH . "pantalla.php");?>
+<body >
+	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 </body>
 
 </html>

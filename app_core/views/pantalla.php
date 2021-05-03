@@ -6,9 +6,9 @@
 			<section id='device'>
 				<div id='screen'>
 					
-					<div id='main_screen'>
-					<button id="btn_buscar" width="20" height="15" class="icon"><i class="fa fa-cog"></i></button>
-						<div id='topbar'><span id='lbl_time_top'>HOLAA</span></div>
+					<div id='main_screen' >
+						<div id='topbar'> <button onclick="hola()" id="btn_config" width="20" height="15" class="icon"><i class="fa fa-cog"></i></button> <span id='lbl_time_top'>HOLAA</span> </div>
+                        
 						<div id='panel'>
 							<div id='panel_icons'>
 
@@ -31,8 +31,10 @@
 								<div id='5' class='iconsFondo'></div>
 							</div>
 						</div>
+                       
 						<div id='main_app'><object id="window_app" data="" width="100%" height="100%"></object></div>
-						<div id='main_menu'></div>
+                       
+						<div id='main_menu' > </div>
 					</div>
 				</div>
 				
