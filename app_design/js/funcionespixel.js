@@ -1,5 +1,6 @@
 window.onload = function () {
     // var canvas = document.getElementById("canvas");
+    
     //======================================================================
     // VARIABLES
     //======================================================================
@@ -16,7 +17,7 @@ window.onload = function () {
     correccionY = posicion.y;
     var img = new Image();
     let ctx = miCanvas.getContext('2d')
-
+    borrar();
     //======================================================================
     // FUNCIONES
     //======================================================================
@@ -114,9 +115,12 @@ window.onload = function () {
 
     var limpiar = document.getElementById("limpiar");
     limpiar.addEventListener("click", function () {
+        borrar();
+    }, false);
+    function borrar(){
         canvas.width = canvas.width;
         lineas = [];
-    }, false);
+    }
 
 };
 function GuardarTrazado() {

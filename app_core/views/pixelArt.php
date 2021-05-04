@@ -23,7 +23,7 @@
             <button style="margin-top: 10px;" onclick="GuardarTrazado()" id="btnDescargar">Descargar trazado</button>
 
           </div>
-          <div style="width: 50%;">      
+          <div style="width: 50%;">
             <input style="margin-top: 10px;" type="file" name="file-1" id="file-1" accept='image/jpeg,image/jpg,image/png' class="inputfile inputfile-1" />
             <label for="file-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17">
@@ -39,9 +39,9 @@
 </div>
 <script type="text/javascript">
   $('#pixel_art_app').on('click', function() {
-    $('#myModalpixel').modal(
-
-    );
+    $('#myModalpixel').modal({
+      
+    });
     $('#myModalpixel').draggable({
       containment: '#main_screen',
       cursor: "crosshair",
