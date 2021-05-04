@@ -28,18 +28,17 @@
     $('#myModalpixel').modal(
 
     );
+    $('#myModalpixel').draggable({
+      containment: '#main_screen'
 
-  });
-  $('#myModalpixel').draggable({
-    containment: '#main_screen'
-
-  });
-  $('#myModalpixel').css({
-    'height': '390px',
-    'width': '450px',
-    'overflow': 'hidden',
-    'position': 'absolute',
-    'left': '40%',
-    'top': '30%'
+    });
+    $('#myModalpixel').css({
+      'height': '390px',
+      'width': '450px',
+      'overflow': 'hidden',
+      'position': 'absolute',
+      'left': '40%',
+      'top': '30%'
+    });
   });
 </script>
