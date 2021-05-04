@@ -5,8 +5,6 @@ window.onload = function () {
     //======================================================================
     let miCanvas = document.querySelector('#canvas');
     let lineas = [];
-    let correccionX = 0;
-    let correccionY = 0;
     let pintarLinea = false;
     // Marca el nuevo punto
     let nuevaPosicionX = 0;
@@ -18,7 +16,6 @@ window.onload = function () {
     correccionY = posicion.y;
     var img = new Image();
     let ctx = miCanvas.getContext('2d')
-    // img.src = "imagen.jpg";
 
     //======================================================================
     // FUNCIONES
@@ -33,9 +30,9 @@ window.onload = function () {
     };
 
     /**
-     * Funcion que guarda la posicion de la nueva línea
+     * Funcion que guarda la posicion del trazado
      */
-    function guardarLinea() {
+    function guardarTrazado() {
         lineas[lineas.length - 1].push({
             x: nuevaPosicionX,
             y: nuevaPosicionY,
@@ -47,15 +44,15 @@ window.onload = function () {
      * Funcion dibuja la linea
      */
     function dibujarLinea(event) {
-        event.preventDefault();
+        // event.preventDefault();
         let posicion2 = miCanvas.getBoundingClientRect()
         if (pintarLinea) {
             let ctx = miCanvas.getContext('2d')
             // Estilos de linea
-            ctx.lineJoin = ctx.lineCap = 'round';
-            ctx.lineWidth = 5;
-            // Color de la linea
-            ctx.strokeStyle = '	#8B0000';
+            // ctx.lineJoin = ctx.lineCap = 'round';
+            // ctx.lineWidth = 5;
+            // // Color de la linea
+            // ctx.strokeStyle = '	#8B0000';
             // Marca el nuevo punto
             if (event.changedTouches == undefined) {
                 scaleX = canvas.width / posicion2.width;
@@ -64,9 +61,9 @@ window.onload = function () {
                 nuevaPosicionY = (event.clientY - posicion2.top) * scaleY
                 color = document.getElementById("muestrario").value;
             }
-            // Guarda la linea
-            guardarLinea();
-            // Redibuja todas las lineas guardadas
+            // Guarda el trazado
+            guardarTrazado();
+            // Redibuja todas los trazados
             ctx.beginPath();
             lineas.forEach(function (segmento) {
                 ctx.moveTo(segmento[0].x, segmento[0].y);
@@ -81,7 +78,7 @@ window.onload = function () {
     }
 
     /**
-     * Funcion que deja de dibujar la linea
+     * Funcion que deja de dibujar 
      */
     function pararDibujar() {
         pintarLinea = false;
@@ -100,9 +97,9 @@ window.onload = function () {
     // Eventos pantallas táctiles
     miCanvas.addEventListener('touchstart', empezarDibujo, false);
     miCanvas.addEventListener('touchmove', dibujarLinea, false);
-    var input = document.getElementById('image_uploads')
-    input.addEventListener('change', updateImageDisplay);
 
+    var input = document.getElementById('file-1')
+    input.addEventListener('change', updateImageDisplay);
     function updateImageDisplay() {
 
         var curFile = input.files;
@@ -110,22 +107,30 @@ window.onload = function () {
         img.src = window.URL.createObjectURL(curFile[0]);
 
         img.onload = function () {
-            ctx.drawImage(img, 0, 0, 500, 500);
+            ctx.drawImage(img, 0, 0, 300, 150);
             // image.style.display = 'none';
-            image.style.width = '500px';
-            image.style.height = '500px';
+            // image.style.width = '200px';
+            // image.style.height = '200px';
         }
     }
+
+
     var limpiar = document.getElementById("limpiar");
     limpiar.addEventListener("click", function () {
         canvas.width = canvas.width;
         lineas = [];
     }, false);
 
-    var inputImagen='imagen';
-    var imagen2=document.getElementById(inputImagen); 
-    function GuardarTrazado() {
-        imagen2.value = document.getElementById(idCanvas).toDataURL('image/png');
-        // document.forms[idForm].submit();
-    }
 };
+function GuardarTrazado() {
+    console.log('hola')
+    // Crear un elemento <a>
+    let miCanvas2 = document.querySelector('#canvas');
+    let enlace = document.createElement('a');
+    // El título
+    enlace.download = "trazado canvas.jpeg";
+    // Convertir la imagen a Base64 y ponerlo en el enlace
+    enlace.href = miCanvas2.toDataURL();
+    // Hacer click en él
+    enlace.click();
+}
