@@ -11,15 +11,11 @@ window.onload = function () {
     // Marca el nuevo punto
     let nuevaPosicionX = 0;
     let nuevaPosicionY = 0;
-    let color='';
+    let color = '';
 
     let posicion = miCanvas.getBoundingClientRect()
     correccionX = posicion.x;
     correccionY = posicion.y;
-
-    miCanvas.width = 500;
-    miCanvas.height = 500;
-
     var img = new Image();
     let ctx = miCanvas.getContext('2d')
     // img.src = "imagen.jpg";
@@ -43,7 +39,7 @@ window.onload = function () {
         lineas[lineas.length - 1].push({
             x: nuevaPosicionX,
             y: nuevaPosicionY,
-            c:color
+            c: color
         });
     }
 
@@ -51,26 +47,22 @@ window.onload = function () {
      * Funcion dibuja la linea
      */
     function dibujarLinea(event) {
-        console.log(document.getElementById("muestrario").value);
         event.preventDefault();
+        let posicion2 = miCanvas.getBoundingClientRect()
         if (pintarLinea) {
             let ctx = miCanvas.getContext('2d')
-            // ctx.drawImage(img, 0, 0);
             // Estilos de linea
             ctx.lineJoin = ctx.lineCap = 'round';
-            ctx.lineWidth = 10;
+            ctx.lineWidth = 5;
             // Color de la linea
             ctx.strokeStyle = '	#8B0000';
             // Marca el nuevo punto
             if (event.changedTouches == undefined) {
-                // Versión ratón
-                nuevaPosicionX = event.layerX;
-                nuevaPosicionY = event.layerY;
+                scaleX = canvas.width / posicion2.width;
+                scaleY = canvas.height / posicion2.height;
+                nuevaPosicionX = (event.clientX - posicion2.left) * scaleX;
+                nuevaPosicionY = (event.clientY - posicion2.top) * scaleY
                 color = document.getElementById("muestrario").value;
-            } else {
-                // Versión touch, pantalla tactil
-                // nuevaPosicionX = event.changedTouches[0].pageX - correccionX;
-                // nuevaPosicionY = event.changedTouches[0].pageY - correccionY;
             }
             // Guarda la linea
             guardarLinea();
@@ -81,7 +73,7 @@ window.onload = function () {
                 segmento.forEach(function (punto, index) {
                     // ctx.lineTo(punto.x, punto.y);
                     ctx.fillStyle = segmento[0].c;
-                    ctx.fillRect(punto.x, punto.y, 10, 10);
+                    ctx.fillRect(punto.x, punto.y, 5, 5);
                 });
             });
             ctx.stroke();
@@ -129,4 +121,11 @@ window.onload = function () {
         canvas.width = canvas.width;
         lineas = [];
     }, false);
+
+    var inputImagen='imagen';
+    var imagen2=document.getElementById(inputImagen); 
+    function GuardarTrazado() {
+        imagen2.value = document.getElementById(idCanvas).toDataURL('image/png');
+        // document.forms[idForm].submit();
+    }
 };

@@ -1,6 +1,7 @@
 canvas {
-    background-color: #0D0909;
+    /* background-color: #0D0909; */
     width: 200px;
     height: 200px;
     border: 1px black solid;
+    
 }
