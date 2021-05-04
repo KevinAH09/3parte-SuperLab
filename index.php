@@ -50,32 +50,32 @@ if (isset($_GET['eliminarPost'])) {
 	</head>
 
 <body>
-	<button id="hola" onclick="hola()">hola</button>
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
 
 	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 	<script type="text/javascript">
-		$('.modal-content').resizable({
-		// 	//alsoResize: ".modal-dialog",
-			minHeight: 400,
-			minWidth: 400
-		
-		});
-		$('#btn_config').on('click', function() {
-			$('#myModal').modal();
-		});
-		$('.modal-dialog').draggable(
-			
-		);
+		$('#pixel_art_app').on('click', function() {
+            $('#myModal').modal();
 
-		$('#myModal').on('show.bs.modal', function() {
-			$(this).find('.modal-body').css({
-				'min-height': '60%',
-				'min-width': '60%'
-				// 'overflow': 'scroll'
-			});
-		});
+        });
+        $('#myModal').draggable({
+            containment: '#main_screen'
+
+        });
+        $('#myModal').css({
+            'height': '350px',
+            'width': '450px',
+			'overflow': 'hidden'
+        });
+		// $('#myModal').on('show.bs.modal', function() {
+        //     $(this).find('.modal-body').css({
+        //         // 'min-height': '300px',
+        //         // 'min-width': '200px',
+		// 		// 'overflow': 'scroll'
+        //         // 'overflow-y': 'auto'
+        //     });
+        // });
 	</script>
 </body>
 

@@ -7,22 +7,22 @@
 				<div id='screen'>
 					
 					<div id='main_screen' >
-						<div id='topbar'> <button onclick="hola()" id="btn_config" width="20" height="15" class="icon"><i class="fa fa-cog"></i></button> <span id='lbl_time_top'>HOLAA</span> </div>
+						<div id='topbar'> <button id="btn_config" width="20" height="15" class="icon"><i class="fa fa-cog"></i></button> <span id='lbl_time_top'>HOLAA</span> </div>
                         
 						<div id='panel'>
 							<div id='panel_icons'>
 
-								<div id='pixel_art_app' class='icons' >
-									<div class='label_icon'>PixelArt</div>
-								</div>
+							<div id='pixel_art_app' class='icons'  style="background:url('app_core/resources/icons/caja.png') no-repeat;">
+                                    <div class='label_icon'>PixelArt</div>
+                                </div>
 
-								<div id='bd_productos_app' class='icons' >
-									<div class='label_icon'>Productos</div>
-								</div>
+                                <div id='bd_productos_app' class='icons'  style="background:url('app_core/resources/icons/caja.png') no-repeat;"> 
+                                    <div class='label_icon'>Productos</div>
+                                </div>
 
-								<div id='twitter_app' class='icons' >
-									<div class='label_icon'>Twitter</div>
-								</div>
+                                <div id='twitter_app' class='icons'  style="background:url('app_core/resources/icons/caja.png') no-repeat;">
+                                    <div class='label_icon'>Twitter</div>
+                                </div>
 								<div id='0' class='iconsFondo'></div>
 								<div id='1' class='iconsFondo'></div>
 								<div id='2' class='iconsFondo'></div>

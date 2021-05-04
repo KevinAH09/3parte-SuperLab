@@ -14,15 +14,15 @@ html, body {
   }
   
   body{
-	  overflow: hidden; /*ocultamos el scroll horizontal del navegador*/
+	 overflow: hidden; 
   }
   
   #device{
 	  position: relative;
 	  border: 5px double rgb(90, 81, 81);
 	  /* border-radius: 45px; */
-	  width: 800px;
-	  height: 550px;
+	  width: 1000px;
+	  height: 650px;
 	  margin: auto;
 	  margin-top: 20px;
 	  background-color: rgb(46, 30, 39);
@@ -51,8 +51,8 @@ html, body {
 	  position: relative;
 	  border: 3px solid rgb(53, 50, 50);
 	  /* border-radius: 3px; */
-	  width: 740px;
-	  height: 490px;
+	  width: 940px;
+	  height: 590px;
 	  margin: auto;
 	  margin-top: 25px;
 	  background: rgb(88, 71, 88);
@@ -80,6 +80,7 @@ html, body {
 	  position: absolute;
 	  width: 100%;
 	  height: 100%;
+	  
 	  /* background: url('../rsc/pics/screen_main.png') #AAA; */
 	  z-index: 0;
   }
@@ -211,198 +212,22 @@ html, body {
   }
   .imgFondo{
 	  float: inline-end;
+	  
   }
 
   /*  ghjfgjgjgfjfjhfgjhjjjjjjjjjjjjjj */
 
 
-
-  #post_box{
-	position: relative;
-	width: auto;
-	margin: auto;
-	height: 100px;
-	top: 0px;
-	text-align: center;
-	background: #E5F4F4;
+#panel_app
+{
+	width:435px;
+	height:250px;
+	overflow: scroll;
+	
 }
 
-
-#panel_app{
-	position: relative;
-	width: 80%;
-	border-radius: 5px;
-	border: 1px solid #DDD;
-	margin: auto;
-	height: 150px;
-	background-color: #FFF;
-	margin-top: 30px;
-}
-
-#main_panel{
-	position: relative;
-	width: auto;
-	border: 0px solid #CCC;
-	margin: auto;
-	height: 100px;
-	overflow: auto;
-}
-
-#txt_post{
-	position: relative;
-	border: 1px solid #008E8E;
-	border-radius: 4px;
-	width: 90%;
-	height: 30px;
-}
-
-.cajatexto{
-	padding: 5px;
-	margin: 10px;
-	border-radius: 5px;
-	border: 1px solid #3AB0B0;
-	width: 300px;
-	color: #555;
-}
-
-.post_block{
-    position: relative;
-	width: 95%;
-	margin: auto;
-	margin-top: 10px;
-	border-radius: 5px;
-	background: #FFF;
-	height: auto;
-	border: 1px solid #DDD;
-	border-top: 4px solid #3AB0B0;
-}
-.boton_eliminar{
-	float: right;
-	position: relative;
-}
-.post_block:hover{
-	background: #EEE;
-}
-
-.published_date{
-	font-size: 10px;
-    font-family: "Verdana";
-    position: relative;
-    color: #BBB;
-	margin: 5px;
-	text-align: right;
-}
-
-.post_detail{
-	font-size: 14px;
-    font-family: "Verdana";
-    position: relative;
-    color: #333;
-	margin: 5px;
-	text-align: justify;
-}
-
-.boton{
-	border: 1px solid #008E8E;
-	background: #3AB0B0;
-	color: #FFF;
-	height: 34px;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-#btn_save{
-	position: relative;
-	width: 90%;
-	margin-top: 10px;
-}
-
-.imgpost{
-	float: left;
-	clear: both;
-	position: relative;
-	top: -18px;
-	left: 5px;
-	margin-right: 15px;
-	border-radius: 100px;
-}
-
-#user_box{
-	position: relative;
-	width: auto;
-	height: 80px;
-	margin: auto;
-	color: #AAA;
-	background: #0061D5 url('https://image.freepik.com/free-vector/blue-geometric-abstract-chaotic-triangle-pattern-background-mosaic-vector-graphic-design_1164-1491.jpg') top center;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
-}
-
-#user_box span{
-	float: left;
-	clear: both;
-	position: absolute;
-	top: 22px;
-	left: 75px;
-	color: #FFF;
-	text-shadow: 1px 1px 0px #AAA;
-}
-
-#msg_box_container{
-	position: fixed;
-	margin-left: auto;
-	left:0;
-	right:10px;
-	width:350px;
-	top:10px;
-	z-index: 100;
-	font-size: 11px;
-	font-family: 'Arial';
-}
-
-.msg_box{
-	position: relative;
-	border: 1px solid #CCCCCC;
-	padding: 10px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	color: #FFFFFF;
-	/*text-shadow: 2px 2px 2px #000;*/
-	font-weight: bold;
-	text-align: center;
-}
-
-.msg_box_user{
-	position: absolute;
-	top:200px;
-	border: 5px solid #CCCCCC;
-	background: #EEE;
-	padding: 10px;
-	color: #333;
-	/*text-shadow: 2px 2px 2px #000;*/
-	font-weight: bold;
-	text-align: center;
-	font-size: 15px;
-	z-index: 100;
-	box-shadow: 2px 2px 15px #000;
-}
-
-.msg_box_user span{
-	padding-bottom:10px;
-}
-
-.error{
-	background: #C00000;
-}
-
-.success{
-	background: #29CC70;
-}
-
-.info{
-	background: #1F8DB1;
+.modal-dialog
+{
+	width:455px;
+	height:350px;
 }
