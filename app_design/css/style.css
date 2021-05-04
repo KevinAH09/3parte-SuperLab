@@ -27,6 +27,7 @@ html, body {
 	  margin-top: 20px;
 	  background-color: rgb(46, 30, 39);
 	  box-shadow: 5px 5px 45px rgb(119, 68, 116);
+	  
   }
   
   /* #btn_home{
@@ -218,16 +219,14 @@ html, body {
   /*  ghjfgjgjgfjfjhfgjhjjjjjjjjjjjjjj */
 
 
-#panel_app
-{
-	width:435px;
-	height:250px;
-	overflow: scroll;
-	
-}
-
 .modal-dialog
 {
 	width:455px;
-	height:350px;
+	height:380px;
+}
+.modal-header
+{
+	height: 40px;
+	background-color: rgb(194, 194, 194);
+	color: rgb(0, 0, 0);
 }

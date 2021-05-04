@@ -43,6 +43,7 @@ if (isset($_GET['eliminarPost'])) {
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funciones.js");
 		echo $html->html_css_header(__CSS_PATH . "style.css", "screen");
+		echo $html->html_css_header(__CSS_PATH . "styleTwitter.css", "screen");
 		?>
 
 		<title>My Twitter</title>
@@ -56,7 +57,9 @@ if (isset($_GET['eliminarPost'])) {
 	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 	<script type="text/javascript">
 		$('#pixel_art_app').on('click', function() {
-            $('#myModal').modal();
+            $('#myModal').modal(
+				
+			);
 
         });
         $('#myModal').draggable({
@@ -64,9 +67,12 @@ if (isset($_GET['eliminarPost'])) {
 
         });
         $('#myModal').css({
-            'height': '350px',
+            'height': '390px',
             'width': '450px',
-			'overflow': 'hidden'
+			'overflow': 'hidden',
+			'position': 'absolute',
+            'left': '40%',
+            'top': '30%'
         });
 		// $('#myModal').on('show.bs.modal', function() {
         //     $(this).find('.modal-body').css({
