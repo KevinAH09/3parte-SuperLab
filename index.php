@@ -43,6 +43,8 @@ if (isset($_GET['eliminarPost'])) {
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funciones.js");
 		echo $html->html_css_header(__CSS_PATH . "style.css", "screen");
+		echo $html->html_js_header(__JS_PATH . "funcionespixel.js");
+		echo $html->html_css_header(__CSS_PATH . "stylepixel.css", "screen");
 		echo $html->html_css_header(__CSS_PATH . "styleTwitter.css", "screen");
 		?>
 
@@ -53,10 +55,11 @@ if (isset($_GET['eliminarPost'])) {
 <body>
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
+	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
 
 	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 	<script type="text/javascript">
-		$('#pixel_art_app').on('click', function() {
+		$('#twitter_app').on('click', function() {
             $('#myModal').modal(
 				
 			);
