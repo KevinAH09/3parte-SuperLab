@@ -66,7 +66,9 @@ if (isset($_GET['eliminarPost'])) {
 
         });
         $('#myModal').draggable({
-            containment: '#main_screen'
+            containment: '#main_screen',
+			cursor: "crosshair",
+			handle: "#modal-dragger"
 
         });
         $('#myModal').css({

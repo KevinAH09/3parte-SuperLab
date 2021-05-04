@@ -1,7 +1,7 @@
 <div class="modal fade" id="myModalpixel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-dialog-center" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" id="modal-dragger">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Pixel Art</h4>
       </div>
@@ -29,7 +29,9 @@
 
     );
     $('#myModalpixel').draggable({
-      containment: '#main_screen'
+      containment: '#main_screen',
+      cursor: "crosshair",
+      handle: "#modal-dragger"
 
     });
     $('#myModalpixel').css({
