@@ -2,17 +2,9 @@
 
 require_once("global.php"); //ARCHIVO BÁSICO GLOBAL DE CONFIGURACIÓN
 require_once(__LIB_PATH . "html.php");
-require_once(__CTR_PATH . "ctr_twitter.php");
 
 $html = new HTML(); //Invocamos al html helper
-$twitter = new CTR_twitter(); //Invocamos al controlador
-$page = "<button id='holaa' onclick='hola()'>hola</button>";
-if (isset($_GET['cargarDatos'])) {
-	$twitter->btn_save_click($_GET['cargarDatos']);
-}
-if (isset($_GET['eliminarPost'])) {
-	$twitter->eliminar_tweets_AXIOS($_GET['eliminarPost']);
-}
+
 //  if (isset($_POST['page'])) {
 // 	$page = $_POST['page'];
 // 	echo $page;
@@ -40,7 +32,7 @@ if (isset($_GET['eliminarPost'])) {
 		<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 
 		<?php
-		echo $html->html_js_header(__JS_PATH . "funciones.js");
+		echo $html->html_js_header(__JS_PATH . "funcionesTwiter.js");
 		echo $html->html_css_header(__CSS_PATH . "style.css", "screen");
 		echo $html->html_js_header(__JS_PATH . "funcionespixel.js");
 		echo $html->html_css_header(__CSS_PATH . "stylepixel.css", "screen");
@@ -55,7 +47,35 @@ if (isset($_GET['eliminarPost'])) {
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
 	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
-	
+	<script type="text/javascript">
+		$('#twitter_app').on('click', function() {
+			$('#myModal').modal();
+			$('#myModal').draggable({
+				containment: '#main_screen',
+				cursor: "crosshair",
+				handle: ".modal-header"
+
+			});
+			$('#myModal').css({
+				'height': '390px',
+				'width': '450px',
+				'overflow': 'hidden',
+				'position': 'absolute',
+				'left': '40%',
+				'top': '30%'
+			});
+
+		});
+
+		// $('#myModal').on('show.bs.modal', function() {
+		//     $(this).find('.modal-body').css({
+		//         // 'min-height': '300px',
+		//         // 'min-width': '200px',
+		// 		// 'overflow': 'scroll'
+		//         // 'overflow-y': 'auto'
+		//     });
+		// });
+	</script>
 </body>
 
 </html>
