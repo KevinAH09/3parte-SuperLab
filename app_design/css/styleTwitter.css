@@ -2,7 +2,7 @@
 	position: relative;
 	width: auto;
 	margin: auto;
-	height: 100px;
+	height: 120px;
 	top: 0px;
 	text-align: center;
 	background: #E5F4F4;
@@ -84,7 +84,7 @@
 
 #btn_save{
 	position: relative;
-	width: 90%;
+	width: 50%;
 	margin-top: 10px;
 }
 
