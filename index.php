@@ -58,36 +58,7 @@ if (isset($_GET['eliminarPost'])) {
 	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
 
 	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-		$('#twitter_app').on('click', function() {
-            $('#myModal').modal(
-				
-			);
-
-        });
-        $('#myModal').draggable({
-            containment: '#main_screen',
-			cursor: "crosshair",
-			handle: "#modal-dragger"
-
-        });
-        $('#myModal').css({
-            'height': '390px',
-            'width': '450px',
-			'overflow': 'hidden',
-			'position': 'absolute',
-            'left': '40%',
-            'top': '30%'
-        });
-		// $('#myModal').on('show.bs.modal', function() {
-        //     $(this).find('.modal-body').css({
-        //         // 'min-height': '300px',
-        //         // 'min-width': '200px',
-		// 		// 'overflow': 'scroll'
-        //         // 'overflow-y': 'auto'
-        //     });
-        // });
-	</script>
+	
 </body>
 
 </html>
