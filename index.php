@@ -32,13 +32,12 @@ if (isset($_GET['eliminarPost'])) {
 		<meta name="language" content="es" />
 		<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-
 		<script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+		<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funciones.js");
@@ -56,8 +55,6 @@ if (isset($_GET['eliminarPost'])) {
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
 	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
-
-	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 	
 </body>
 
