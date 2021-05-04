@@ -6,12 +6,17 @@ require_once(__CTR_PATH . "ctr_twitter.php");
 
 $html = new HTML(); //Invocamos al html helper
 $twitter = new CTR_twitter(); //Invocamos al controlador
+$page = "<button id='holaa' onclick='hola()'>hola</button>";
 if (isset($_GET['cargarDatos'])) {
 	$twitter->btn_save_click($_GET['cargarDatos']);
 }
 if (isset($_GET['eliminarPost'])) {
 	$twitter->eliminar_tweets_AXIOS($_GET['eliminarPost']);
 }
+//  if (isset($_POST['page'])) {
+// 	$page = $_POST['page'];
+// 	echo $page;
+// }
 ?>
 <!DOCTYPE html>
 
@@ -30,6 +35,10 @@ if (isset($_GET['eliminarPost'])) {
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 
+		<script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
 
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funciones.js");
@@ -40,8 +49,34 @@ if (isset($_GET['eliminarPost'])) {
 
 	</head>
 
-<body >
+<body>
+	<button id="hola" onclick="hola()">hola</button>
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
+	<?php require_once(__VWS_PATH . "twitter.php"); ?>
+
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$('.modal-content').resizable({
+		// 	//alsoResize: ".modal-dialog",
+			minHeight: 400,
+			minWidth: 400
+		
+		});
+		$('#btn_config').on('click', function() {
+			$('#myModal').modal();
+		});
+		$('.modal-dialog').draggable(
+			
+		);
+
+		$('#myModal').on('show.bs.modal', function() {
+			$(this).find('.modal-body').css({
+				'min-height': '60%',
+				'min-width': '60%'
+				// 'overflow': 'scroll'
+			});
+		});
+	</script>
 </body>
 
 </html>
