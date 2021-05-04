@@ -83,7 +83,7 @@ window.onload = function () {
      */
     function pararDibujar() {
         pintarLinea = false;
-        guardarLinea();
+        guardarTrazado();
     }
 
     //======================================================================
