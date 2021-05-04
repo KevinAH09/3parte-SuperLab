@@ -108,9 +108,6 @@ window.onload = function () {
 
         img.onload = function () {
             ctx.drawImage(img, 0, 0, 300, 150);
-            // image.style.display = 'none';
-            // image.style.width = '200px';
-            // image.style.height = '200px';
         }
     }
 
