@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModalpixel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-dialog-center" role="document">
+  <div class="modal-dialog modal-dialog-center" id="mdialTamanio" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -53,8 +53,8 @@
       'width': '450px',
       'overflow': 'hidden',
       'position': 'absolute',
-      'left': '40%',
-      'top': '30%'
+      'left': '35%',
+      'top': '160px'
     });
   });
 </script>

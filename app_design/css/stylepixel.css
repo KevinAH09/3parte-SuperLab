@@ -1,10 +1,11 @@
 canvas {
     /* background-color: #0D0909; */
-    width: 200px;
+    width: 300px;
     height: 200px;
     border: 1px black solid;
-    
+
 }
+
 .container-input {
     text-align: center;
     /* background: #282828;
@@ -15,6 +16,7 @@ canvas {
     margin: 0 auto;
     margin-bottom: 5px;
 }
+
 .inputfile {
     width: 0.1px;
     height: 0.1px;
@@ -24,7 +26,7 @@ canvas {
     z-index: -1;
 }
 
-.inputfile + label {
+.inputfile+label {
     max-width: 80%;
     font-size: 1.25rem;
     font-weight: 700;
@@ -36,7 +38,7 @@ canvas {
     padding: 0.625rem 1.25rem;
 }
 
-.inputfile + label svg {
+.inputfile+label svg {
     width: 1em;
     height: 1em;
     vertical-align: middle;
@@ -46,20 +48,27 @@ canvas {
 }
 
 .iborrainputfile {
-	font-size:16px; 
-	font-weight:normal;
-	font-family: 'Lato';
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Lato';
 }
 
 
-.inputfile-1 + label {
+.inputfile-1+label {
     color: #fff;
     /* background-color: #c39f77; */
-	background: #3AB0B0;
+    background: #3AB0B0;
 }
 
-.inputfile-1:focus + label,
-.inputfile-1.has-focus + label,
-.inputfile-1 + label:hover {
+.inputfile-1:focus+label,
+.inputfile-1.has-focus+label,
+.inputfile-1+label:hover {
     background-color: #9f8465;
+}
+
+#mdialTamanio {
+    width: 100% !important;
+}
+#myModalpixel {
+    width: 600px !important;
 }

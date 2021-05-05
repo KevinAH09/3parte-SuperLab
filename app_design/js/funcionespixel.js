@@ -6,7 +6,7 @@ window.onload = function () {
     //======================================================================
     let miCanvas = document.querySelector('#canvas');
     let lineas = [];
-    let pintarLinea = false;
+    let pintar = false;
     // Marca el nuevo punto
     let nuevaPosicionX = 0;
     let nuevaPosicionY = 0;
@@ -26,7 +26,7 @@ window.onload = function () {
      * Funcion que empieza a dibujar la linea
      */
     function empezarDibujo() {
-        pintarLinea = true;
+        pintar = true;
         lineas.push([]);
     };
 
@@ -47,7 +47,7 @@ window.onload = function () {
     function dibujarLinea(event) {
         // event.preventDefault();
         let posicion2 = miCanvas.getBoundingClientRect()
-        if (pintarLinea) {
+        if (pintar) {
             let ctx = miCanvas.getContext('2d')
             // Estilos de linea
             // ctx.lineJoin = ctx.lineCap = 'round';
@@ -82,7 +82,7 @@ window.onload = function () {
      * Funcion que deja de dibujar 
      */
     function pararDibujar() {
-        pintarLinea = false;
+        pintar = false;
         guardarTrazado();
     }
 
@@ -99,6 +99,7 @@ window.onload = function () {
     miCanvas.addEventListener('touchstart', empezarDibujo, false);
     miCanvas.addEventListener('touchmove', dibujarLinea, false);
 
+    //Evento para cambiar la imagen en el canvas
     var input = document.getElementById('file-1')
     input.addEventListener('change', updateImageDisplay);
     function updateImageDisplay() {
@@ -112,7 +113,7 @@ window.onload = function () {
         }
     }
 
-
+    //Evento para limpiar lo desarrollado dentro del canvas
     var limpiar = document.getElementById("limpiar");
     limpiar.addEventListener("click", function () {
         borrar();
@@ -123,8 +124,8 @@ window.onload = function () {
     }
 
 };
+//Guardar el trazado en una imagen
 function GuardarTrazado() {
-    console.log('hola')
     // Crear un elemento <a>
     let miCanvas2 = document.querySelector('#canvas');
     let enlace = document.createElement('a');
