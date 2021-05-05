@@ -71,7 +71,7 @@ window.onload = function () {
                 segmento.forEach(function (punto, index) {
                     // ctx.lineTo(punto.x, punto.y);
                     ctx.fillStyle = segmento[0].c;
-                    ctx.fillRect(punto.x, punto.y, 5, 5);
+                    ctx.fillRect(punto.x, punto.y, 3, 3);
                 });
             });
             ctx.stroke();
