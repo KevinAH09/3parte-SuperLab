@@ -230,3 +230,10 @@ html, body {
 	background-color: rgb(194, 194, 194);
 	color: rgb(0, 0, 0);
 }
+#btn_config{
+	margin-right: 400px;
+	display: inline-block;
+}
+#lbl_time_top{
+	display: inline-block;
+}
