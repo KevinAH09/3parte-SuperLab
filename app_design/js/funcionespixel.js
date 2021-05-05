@@ -1,6 +1,6 @@
 window.onload = function () {
     // var canvas = document.getElementById("canvas");
-    
+
     //======================================================================
     // VARIABLES
     //======================================================================
@@ -103,11 +103,9 @@ window.onload = function () {
     var input = document.getElementById('file-1')
     input.addEventListener('change', updateImageDisplay);
     function updateImageDisplay() {
-
-        var curFile = input.files;
-        source = curFile[0].name;
-        img.src = window.URL.createObjectURL(curFile[0]);
-
+        borrar();
+        var file = input.files;
+        img.src = window.URL.createObjectURL(file[0]);
         img.onload = function () {
             ctx.drawImage(img, 0, 0, 300, 150);
         }
@@ -118,7 +116,7 @@ window.onload = function () {
     limpiar.addEventListener("click", function () {
         borrar();
     }, false);
-    function borrar(){
+    function borrar() {
         canvas.width = canvas.width;
         lineas = [];
     }
