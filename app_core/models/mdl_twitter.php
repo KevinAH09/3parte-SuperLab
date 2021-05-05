@@ -45,9 +45,16 @@
 		          $posts[$num_fila][0] = $fila[0]; //id
 		          $posts[$num_fila][1] = $fila[1]; //detalle del post
 		          $posts[$num_fila][2] = $fila[2]; //fecha
+				  $posts[$num_fila][3] = $fila[3]; //id respuesta
 		          $num_fila++;
 			}
-			
+			while ($fila = $posts) {
+				$posts[$num_fila][0] = $fila[0]; //id
+				$posts[$num_fila][1] = $fila[1]; //detalle del post
+				$posts[$num_fila][2] = $fila[2]; //fecha
+				$posts[$num_fila][3] = $fila[3]; //id respuesta
+				$num_fila++;
+		  }
 			return $posts;
 		}
 

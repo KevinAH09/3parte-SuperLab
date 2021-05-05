@@ -73,8 +73,9 @@ if (isset($_POST['btn_edit'])) {
                                 <div id='content_post_<?php echo $t[0]; ?>'>
                                     <div class='post_detail'><?php echo $t[1]; ?></div><br />
                                 </div>
-                                <button id='btn_delete' type='button' class='boton_crud' name='btn_delete' onclick='eliminarAjax(<?php echo $t[0] ?>)'>X</button>
-                                <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(<?php echo $t[0] ?>)'>✓</button>
+                                <button id='btn_delete' type='button' name='btn_delete'  class='boton_crud' onclick='eliminarAjax(<?php echo $t[0] ?>)'><i class="fa fa-times"></i></button>
+                                <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(<?php echo $t[0] ?>)'><i class="fa fa-edit"></i></button>
+                                <button id='btn_resp' type='button' name='btn_resp' class='boton_crud' onclick='reponderAjax(<?php echo $t[0] ?>)'><i class="fa fa-reply"></i></button>
                             </div>
 
                         <?php } ?>
