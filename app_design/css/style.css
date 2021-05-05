@@ -168,7 +168,7 @@ html, body {
 	  width: 64px;
 	  height: 64px;
 	  margin: 20px;
-	  float: left;
+	  float: inherit;
 	  cursor: pointer;
   }
   .iconsFondo{
@@ -189,7 +189,7 @@ html, body {
 	  color: #DDD;
 	  background: rgba(0,0,0,0.4);
 	  font-family: Segoe UI, Verdana;
-	  font-size: 9px;
+	  font-size: 12px;
 	  border-radius: 8px;
 	  text-align: center;
 	  top: 70px;

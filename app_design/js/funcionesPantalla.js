@@ -2,6 +2,11 @@ window.addEventListener('load', miFuncionLoad, false);
 
 function miFuncionLoad() {
     setInterval("reloj()", 1000);
+    var unlock = document.getElementById('main_screen');
+
+    unlock.style.background = "url(\"app_core/resources/icons/asus.jpg \") no-repeat center center";
+    unlock.style.backgroundSize = " 100% 100%";
+
 }
 
 function reloj() {

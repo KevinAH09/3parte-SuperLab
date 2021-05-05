@@ -15,11 +15,11 @@
 							<div id='pixel_art_app' class='icons' style="background:url('app_core/resources/icons/paint.png') no-repeat;">
 								<div class='label_icon'>PixelArt</div>
 							</div>
-
+							<br>
 							<div id='bd_productos_app' class='icons' style="background:url('app_core/resources/icons/caja.png') no-repeat;">
 								<div class='label_icon'>Productos</div>
 							</div>
-
+							<br>
 							<div id='twitter_app' class='icons' style="background:url('app_core/resources/icons/gorjeo.png') no-repeat;">
 								<div class='label_icon'>Twitter</div>
 							</div>
