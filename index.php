@@ -35,9 +35,9 @@ $html = new HTML(); //Invocamos al html helper
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funcionesTwiter.js");
 		echo $html->html_css_header(__CSS_PATH . "style.css", "screen");
-		echo $html->html_js_header(__JS_PATH . "funcionespixel.js");
 		echo $html->html_js_header(__JS_PATH . "funcionesProducto.js");
 		echo $html->html_js_header(__JS_PATH . "funcionesPantalla.js");
+		echo $html->html_js_header(__JS_PATH . "funcionespixel.js");
 		echo $html->html_css_header(__CSS_PATH . "stylepixel.css", "screen");
 		echo $html->html_css_header(__CSS_PATH . "styleTwitter.css", "screen");
 		echo $html->html_css_header(__CSS_PATH . "styleProducto.css", "screen");
