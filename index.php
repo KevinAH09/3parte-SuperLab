@@ -30,13 +30,16 @@ $html = new HTML(); //Invocamos al html helper
 		<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
 		<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js"></script>
 
 		<?php
 		echo $html->html_js_header(__JS_PATH . "funcionesTwiter.js");
 		echo $html->html_css_header(__CSS_PATH . "style.css", "screen");
 		echo $html->html_js_header(__JS_PATH . "funcionespixel.js");
+		echo $html->html_js_header(__JS_PATH . "funcionesProducto.js");
 		echo $html->html_css_header(__CSS_PATH . "stylepixel.css", "screen");
 		echo $html->html_css_header(__CSS_PATH . "styleTwitter.css", "screen");
+		echo $html->html_css_header(__CSS_PATH . "styleProducto.css", "screen");
 		?>
 
 		<title>My Twitter</title>
@@ -47,6 +50,7 @@ $html = new HTML(); //Invocamos al html helper
 	<?php require_once(__VWS_PATH . "pantalla.php"); ?>
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
 	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
+	<?php require_once(__VWS_PATH . "productos.php"); ?>
 	
 </body>
 
