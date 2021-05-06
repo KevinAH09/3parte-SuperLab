@@ -7,10 +7,6 @@ function miFuncionLoad() {
     unlock.style.background = "url(\"app_core/resources/icons/asus.jpg \") no-repeat center center";
     unlock.style.backgroundSize = " 100% 100%";
 
-    // $("#lbl_time_top").on("click", function () {
-    //     $("#fecha").datepicker("show");
-    // });
-
     var limpiar = document.getElementById("lbl_time_top");
     limpiar.addEventListener("click", mostrarUocultar, false);
     $("#date").datepicker({
@@ -34,6 +30,5 @@ function reloj() {
     var minutos = fecha.getMinutes();
     var segundos = fecha.getSeconds();
 
-    // document.getElementById('lbl_time').innerHTML = semana[dia] + " " + horas + ':' + minutos;
     document.getElementById('lbl_time_top').innerHTML = innerHTML = semana[dia] + " " + horas + ':' + minutos + ':' + segundos;
 }

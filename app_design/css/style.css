@@ -31,23 +31,6 @@ body {
 
 }
 
-/* #btn_home{
-	  border: 5px double rgb(0, 0, 0);
-	  border-radius: 45px;
-	  position: relative;
-	  height: 40px;
-	  width: 40px;
-	  margin:auto;
-	  cursor: pointer;
-	  background: rgb(151, 60, 212);
-	  display: block;
-	  top: 5px;
-  } */
-
-/* #btn_home:active{
-	  border: 5px double rgb(224, 116, 224);
-	  background: rgb(82, 35, 79);
-  } */
 
 #screen {
 	position: relative;
@@ -60,25 +43,6 @@ body {
 	background: rgb(88, 71, 88);
 }
 
-/*   
-  #block_screen{
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	   background: url('../rsc/pics/screen_lock.png') rgb(66, 64, 64); 
-	  z-index: 1;
-  }
-  
-  @keyframes fadeout {
-	  from { opacity: 1; visibility: visible; }
-	  to   { opacity: 0; visibility: hidden; }
-  }
-  
-  @keyframes fadein {
-	  from { opacity: 0; visibility: hidden; }
-	  to   { opacity: 1; visibility: visible; }
-  }
-   */
 #main_screen {
 	position: absolute;
 	width: 100%;
@@ -87,19 +51,6 @@ body {
 	/* background: url('../rsc/pics/screen_main.png') #AAA; */
 	z-index: 0;
 }
-
-/* #time{
-	  position: relative;
-	  width: 100%;
-	  height: 80px;
-	  top: 30px;
-	  background: rgba(0, 0, 0, 0.4);
-	  text-align: center;
-	  font-family: Segoe UI, Verdana;
-	  font-size: 52px;
-	  color: #EEE;
-	  text-shadow:1px 1px 1px #333;
-  } */
 
 
 #lbl_time_top {
@@ -220,8 +171,6 @@ body {
 	float: inline-end;
 
 }
-
-/*  ghjfgjgjgfjfjhfgjhjjjjjjjjjjjjjj */
 
 
 .modal-dialog {
