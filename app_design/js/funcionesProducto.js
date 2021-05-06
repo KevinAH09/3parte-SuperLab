@@ -14,10 +14,9 @@ function cargarProductos(dato) {
       temphtml.innerHTML = response.data;
       document.getElementById('resultados').innerHTML = temphtml.querySelector("#" + "resultados").innerHTML;
 
-      // var temphtml1 = document.createElement('div');
-      // temphtml1.innerHTML = response.data;
-      // console.log(temphtml1.querySelector("#" + "grafico").innerHTML);
-      // document.getElementById('grafico').innerHTML = temphtml1.querySelector("#" + "grafico").innerHTML;
+      var temphtml1 = document.createElement('div');
+      temphtml1.innerHTML = response.data;
+      document.getElementById('grafico').innerHTML = temphtml1.querySelector("#" + "grafico").innerHTML;
       MyChart();
     })
     .catch(function (error) { //En caso de carga fallida del recurso
@@ -219,10 +218,10 @@ function MyChart() {
       // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       
-      if (window.grafica) {
-        window.grafica.clear();
-        window.grafica.destroy();
-      }
+      // if (window.grafica) {
+      //   window.grafica.clear();
+      //   window.grafica.destroy();
+      // }
       new Chart(ctxCircular, {
         type: 'pie',
         data: {
