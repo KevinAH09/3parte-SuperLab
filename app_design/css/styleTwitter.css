@@ -175,3 +175,10 @@
 	height:260px;
 	overflow: scroll;
 }
+
+#mdialTamanio {
+    width: 100% !important;
+}
+#myModal {
+    width: 600px !important;
+}
