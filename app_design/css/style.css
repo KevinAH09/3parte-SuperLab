@@ -1,36 +1,37 @@
 ﻿/*Quitamos los bordes invisibles a nuestra página*/
-html, body { 
+html,
+body {
 	margin: 0;
 	padding: 0;
 	background-color: rgb(64, 54, 77);
-  }
-  
-  /*Centramos nuestro contenido total*/
-  #page{
-	  position: relative;
-	  width: 100%;
-	  height: 100%;
-	  /* margin: auto; esta es la clave para centrar contenido */
-  }
-  
-  body{
-	 overflow: hidden; 
-  }
-  
-  #device{
-	  position: relative;
-	  border: 5px double rgb(90, 81, 81);
-	  /* border-radius: 45px; */
-	  width: 1000px;
-	  height: 650px;
-	  margin: auto;
-	  margin-top: 20px;
-	  background-color: rgb(46, 30, 39);
-	  box-shadow: 5px 5px 45px rgb(119, 68, 116);
-	  
-  }
-  
-  /* #btn_home{
+}
+
+/*Centramos nuestro contenido total*/
+#page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/* margin: auto; esta es la clave para centrar contenido */
+}
+
+body {
+	overflow: hidden;
+}
+
+#device {
+	position: relative;
+	border: 5px double rgb(90, 81, 81);
+	/* border-radius: 45px; */
+	width: 1000px;
+	height: 650px;
+	margin: auto;
+	margin-top: 20px;
+	background-color: rgb(46, 30, 39);
+	box-shadow: 5px 5px 45px rgb(119, 68, 116);
+
+}
+
+/* #btn_home{
 	  border: 5px double rgb(0, 0, 0);
 	  border-radius: 45px;
 	  position: relative;
@@ -42,22 +43,23 @@ html, body {
 	  display: block;
 	  top: 5px;
   } */
-  
-  /* #btn_home:active{
+
+/* #btn_home:active{
 	  border: 5px double rgb(224, 116, 224);
 	  background: rgb(82, 35, 79);
   } */
-  
-  #screen{
-	  position: relative;
-	  border: 3px solid rgb(53, 50, 50);
-	  /* border-radius: 3px; */
-	  width: 940px;
-	  height: 590px;
-	  margin: auto;
-	  margin-top: 25px;
-	  background: rgb(88, 71, 88);
-  }
+
+#screen {
+	position: relative;
+	border: 3px solid rgb(53, 50, 50);
+	/* border-radius: 3px; */
+	width: 940px;
+	height: 590px;
+	margin: auto;
+	margin-top: 25px;
+	background: rgb(88, 71, 88);
+}
+
 /*   
   #block_screen{
 	  position: absolute;
@@ -77,16 +79,16 @@ html, body {
 	  to   { opacity: 1; visibility: visible; }
   }
    */
-  #main_screen{
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  
-	  /* background: url('../rsc/pics/screen_main.png') #AAA; */
-	  z-index: 0;
-  }
-  
-  /* #time{
+#main_screen {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	/* background: url('../rsc/pics/screen_main.png') #AAA; */
+	z-index: 0;
+}
+
+/* #time{
 	  position: relative;
 	  width: 100%;
 	  height: 80px;
@@ -98,142 +100,212 @@ html, body {
 	  color: #EEE;
 	  text-shadow:1px 1px 1px #333;
   } */
-  
-  
-  #lbl_time_top{
-	  position: relative;
-	  display: block;
-	  margin: auto;
-	  text-align: center;
-	  font-family: Segoe UI, Verdana;
-	  font-size: 12px;
-	  font-weight: bold;
-	  color: #FFF;
-  }
-  
-  #btn_unlock{
-	  position: relative;
-	  margin: auto;
-	  height: 68px;
-	  width: 68px;
-	  border: 3px solid #FFF;
-	  top: 230px;
-	  border-radius: 100px;
-	  /* background: url('../rsc/imgs/locks.png') no-repeat; */
-	  background-position: 6px 0px;
-	  opacity: 0.8;
-	  cursor: pointer;
-  }
-  
-  #btn_unlock:active{
-	  background-position: -80px 0px;
-	  background-color: rgba(0, 999, 0, 0.4);
-	  height: 75px;
-	  width: 75px;
-  }
-  
-  #topbar{
-	  position: absolute;
-	  width: 100%;
-	  height: 18px;
-	  background: #000;
-	  top: 0px;
-	  opacity: 0.8;
-  }
-  
-  #main_menu{
-	  position: absolute;
-	  width: 100%;
-	  height: 1px;
-	  background: rgba(34, 32, 32, 0.5);
-	  bottom: 0px;
-  }
-  
-  #panel{
-	  position: absolute;
-	  width: 100%;
-	  height: 400px;
-	  top: 40px;
-  }
-  
-  #panel_icons{
-	  position: relative;
-	  margin:auto;
-	  width: 95%;
-	  height: 90%;
-  }
-  
-  .icons{
-	  position: relative;
-	  width: 64px;
-	  height: 64px;
-	  margin: 20px;
-	  float: inherit;
-	  cursor: pointer;
-  }
-  .iconsFondo{
-	  position: relative;
-	  width: 200px;
-	  height: 150px;
-	  margin: 5px;
-	  float: left;
-	  cursor: pointer;
-	  background-size: 200px 150px;
-	  background-position: center center;
-  }
-  
-  .label_icon{
-	  position: relative;
-	  width: 100%;
-	  height: 13px;
-	  color: #DDD;
-	  background: rgba(0,0,0,0.4);
-	  font-family: Segoe UI, Verdana;
-	  font-size: 12px;
-	  border-radius: 8px;
-	  text-align: center;
-	  top: 70px;
-  }
-  
-  #main_app{
-	  visibility: hidden;
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  background: rgb(34, 34, 34);
-	  z-index: 1;
-  }
-  
-  #main_app iframe{
-	  overflow: hidden;
-	  border: none;
-  }
-  #btn_editFondo{
-	  background-color: transparent;
-  }
-  .imgFondo{
-	  float: inline-end;
-	  
-  }
-
-  /*  ghjfgjgjgfjfjhfgjhjjjjjjjjjjjjjj */
 
 
-.modal-dialog
-{
-	width:455px;
-	height:380px;
+#lbl_time_top {
+	position: relative;
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-family: Segoe UI, Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
 }
-.modal-header
-{
+
+#btn_unlock {
+	position: relative;
+	margin: auto;
+	height: 68px;
+	width: 68px;
+	border: 3px solid #FFF;
+	top: 230px;
+	border-radius: 100px;
+	/* background: url('../rsc/imgs/locks.png') no-repeat; */
+	background-position: 6px 0px;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#btn_unlock:active {
+	background-position: -80px 0px;
+	background-color: rgba(0, 999, 0, 0.4);
+	height: 75px;
+	width: 75px;
+}
+
+#topbar {
+	position: absolute;
+	width: 100%;
+	height: 18px;
+	background: #000;
+	top: 0px;
+	opacity: 0.8;
+}
+
+#main_menu {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: rgba(34, 32, 32, 0.5);
+	bottom: 0px;
+}
+
+#panel {
+	position: absolute;
+	width: 100%;
+	height: 400px;
+	top: 40px;
+}
+
+#panel_icons {
+	position: relative;
+	margin: auto;
+	width: 95%;
+	height: 90%;
+}
+
+.icons {
+	position: relative;
+	width: 64px;
+	height: 64px;
+	margin: 20px;
+	float: inherit;
+	cursor: pointer;
+}
+
+.iconsFondo {
+	position: relative;
+	width: 200px;
+	height: 150px;
+	margin: 5px;
+	float: left;
+	cursor: pointer;
+	background-size: 200px 150px;
+	background-position: center center;
+}
+
+.label_icon {
+	position: relative;
+	width: 100%;
+	height: 13px;
+	color: #DDD;
+	background: rgba(0, 0, 0, 0.4);
+	font-family: Segoe UI, Verdana;
+	font-size: 12px;
+	border-radius: 8px;
+	text-align: center;
+	top: 70px;
+}
+
+#main_app {
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(34, 34, 34);
+	z-index: 1;
+}
+
+#main_app iframe {
+	overflow: hidden;
+	border: none;
+}
+
+#btn_editFondo {
+	background-color: transparent;
+}
+
+.imgFondo {
+	float: inline-end;
+
+}
+
+/*  ghjfgjgjgfjfjhfgjhjjjjjjjjjjjjjj */
+
+
+.modal-dialog {
+	width: 455px;
+	height: 380px;
+}
+
+.modal-header {
 	height: 40px;
 	background-color: rgb(194, 194, 194);
 	color: rgb(0, 0, 0);
 }
-#btn_config{
+
+#btn_config {
 	margin-right: 400px;
 	display: inline-block;
 }
-#lbl_time_top{
+
+#lbl_time_top {
 	display: inline-block;
+}
+
+#date {
+	margin-top: 30px;
+	margin-left: 340px;
+}
+
+
+.ui-datepicker-title {
+	color: white;
+}
+
+.ui-datepicker {
+	width: 15.20em !important;
+	font-family: 'Jaldi', sans-serif !important;
+	border: 1px solid rgb(122, 120, 120) !important;
+}
+
+.ui-datepicker-header {
+	border-radius: 0px !important;
+	background-color: #525050 !important;
+	background: #966161 !important;
+	border: none !important;
+}
+
+.ui-datepicker-next {
+	background-color: lightblue;
+	color: #000 !important;
+	top: 3px !important;
+	right: 3px !important;
+}
+
+.ui-datepicker-prev {
+	background-color: lightblue;
+	color: #000 !important;
+	top: 3px !important;
+	left: 3px !important;
+}
+
+.ui-datepicker-next:hover {
+	border: none !important;
+	top: 3px !important;
+	right: 3px !important;
+	background: rgb(134, 255, 97) !important;
+	cursor: pointer;
+}
+
+.ui-datepicker-prev:hover {
+	border: none !important;
+	top: 3px !important;
+	left: 3px !important;
+	background: rgb(134, 255, 97) !important;
+	cursor: pointer;
+}
+
+.ui-state-default {
+	background: none !important;
+	background-color: #be4242;
+}
+
+#date-picker-expirate .ui-datepicker-calendar {
+	display: none;
+}
+.ui-datepicker-calendar .ui-state-active {
+    color: #e91e62;
+    border: 1px solid #e91e62;
 }

@@ -7,6 +7,23 @@ function miFuncionLoad() {
     unlock.style.background = "url(\"app_core/resources/icons/asus.jpg \") no-repeat center center";
     unlock.style.backgroundSize = " 100% 100%";
 
+    // $("#lbl_time_top").on("click", function () {
+    //     $("#fecha").datepicker("show");
+    // });
+
+    var limpiar = document.getElementById("lbl_time_top");
+    limpiar.addEventListener("click", mostrarUocultar, false);
+    $("#date").datepicker({
+
+    });
+}
+function mostrarUocultar() {
+    var x = document.getElementById("date");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 function reloj() {

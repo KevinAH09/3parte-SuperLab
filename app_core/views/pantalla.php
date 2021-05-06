@@ -8,7 +8,7 @@
 
 				<div id='main_screen'>
 					<div id='topbar'> <button id="btn_config" width="20" height="15" class="icon"><i class="fa fa-cog"></i></button> <span id='lbl_time_top'></span> </div>
-
+					<div id="date" style="display: none"></div>
 					<div id='panel'>
 						<div id='panel_icons'>
 
@@ -23,12 +23,12 @@
 							<div id='twitter_app' class='icons' style="background:url('app_core/resources/icons/gorjeo.png') no-repeat;">
 								<div class='label_icon'>Twitter</div>
 							</div>
-							<div id='0' class='iconsFondo'></div>
+							<!-- <div id='0' class='iconsFondo'></div>
 							<div id='1' class='iconsFondo'></div>
 							<div id='2' class='iconsFondo'></div>
 							<div id='3' class='iconsFondo'></div>
 							<div id='4' class='iconsFondo'></div>
-							<div id='5' class='iconsFondo'></div>
+							<div id='5' class='iconsFondo'></div> -->
 						</div>
 					</div>
 
