@@ -23,6 +23,26 @@ class MDL_twitter
 
 		return $this->extraerDatos();
 	}
+	public function get_tweets_respuestas($id)
+	{
+		$this->conexion->consulta("SELECT tbl_posts.id, tbl_posts.post,tbl_posts.date,tbl_posts.tbl_posts_id 
+									   FROM tbl_posts WHERE tbl_posts.tbl_posts_id = $id
+									   ORDER BY tbl_posts.id DESC");
+
+		$posts = array(); //matriz
+		$num_fila = 0;
+
+		//obtenemos cada registro y cada campo
+		while ($fila = $this->conexion->extraer_registro()) {
+			$posts[$num_fila][0] = $fila[0]; //id
+			$posts[$num_fila][1] = $fila[1]; //detalle del post
+			$posts[$num_fila][2] = $fila[2];
+			$posts[$num_fila][3] = $fila[3]; //fecha
+			$num_fila++;
+		}
+
+		return $posts;
+	}
 
 	public function buscar_tweets($datospost = array())
 	{
@@ -68,10 +88,16 @@ class MDL_twitter
 
 	//Función para insertar registros
 
-	public function insertar_post($datospost = array())
+	public function insertar_post($datospost = array(), $id_res)
 	{
-		$this->conexion->consulta("INSERT INTO tbl_posts (post, date) 
-									   VALUES ('" . $datospost[0] . "','" . date('Y-m-d H:i:s') . "')");
+		if( $id_res !=''){
+			$this->conexion->consulta("INSERT INTO tbl_posts (post, date,tbl_posts_id) 
+									   VALUES ('" . $datospost[0] . "','" . date('Y-m-d H:i:s') . "',$id_res)");
+		}else{
+			$this->conexion->consulta("INSERT INTO tbl_posts (post, date) 
+									   VALUES ('" . $datospost[0] . "','" . date('Y-m-d H:i:s') . "')");  
+		}
+		
 	}
 
 	public function eliminar_post($idpost)

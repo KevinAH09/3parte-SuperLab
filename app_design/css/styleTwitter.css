@@ -1,6 +1,6 @@
 #post_box{
 	position: relative;
-	width: auto;
+	width: 550;
 	margin: auto;
 	height: 120px;
 	top: 0px;
@@ -13,9 +13,9 @@
 
 #main_panel{
 	position: relative;
-	width: auto;
+	width: 550;
 	border: 0px solid #CCC;
-	margin: auto;
+	margin: 0;
 	height: 360px;
 	/* overflow: auto; */
 }
@@ -168,11 +168,10 @@
 	position: relative;
 	border-radius: 5px;
 	border: 1px solid #DDD;
-	margin: auto;
+	margin: 0;
 	background-color: #FFF;
 	/* margin-top: 1px; */
-    width:435px;
-	height:260px;
+
 	overflow: scroll;
 }
 

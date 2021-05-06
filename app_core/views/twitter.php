@@ -12,32 +12,34 @@ if (isset($_POST['btn_save'])) {
 }
 
 if (isset($_POST['btn_delete'])) {
-    $twitter->btn_delete_click();
+    $twitter->btn_delete_click($_POST["id_post"],$_POST["img_post"]);
 }
 
 if (isset($_POST['btn_edit'])) {
     $twitter->btn_edit_click();
 }
 
-function imprimirTweets($tweet,$pos)
+function imprimirTweets($tweet, $pos,$html)
 {
-    $espacio=20;
-    $espacio= $espacio*$pos;
+    $espacio = 20;
+    $espacio = $espacio * $pos;
     $postHtml = "";
+    $tamano=  550;
+    $tamano=$tamano-$espacio;
     foreach ($tweet as $p) {
-        $postHtml .=  "<div class='post_block' style='margin-left: ".$espacio."px'>
-        <span class='post_text' id='post_".$p->post[0]."'>
-            <div class='published_date'>
-                <span>Publicado el ".$p->post[2]." </span>
-            </div>
-        </span>
-        <div id='content_post_".$p->post[0]."'>
-            <div class='post_detail'>".$p->post[1]."</div><br />
-        </div>
-        <button id='btn_delete' type='button' name='btn_delete'  class='boton_crud' onclick='eliminarAjax(".$p->post[0].")'><i class='fa fa-times'></i></button>
-        <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(".$p->post[0].")'><i class='fa fa-edit'></i></button>
-        <button id='btn_resp' type='button' name='btn_resp' class='boton_crud' onclick='reponderAjax(".$p->post[0].")'><i class='fa fa-reply'></i></button>
-        </div><div>" . imprimirTweets($p->respuestas,$pos+1) . "</div>";
+        $postHtml .=  "<div class='post_block' style='margin-left: " . $espacio . "px; width:$tamano'>
+                            <span class='post_text' id='post_" . $p->post[0] . "'>
+                                <div class='published_date'><span>Publicado el " . $p->post[2] . "</span>
+                                </div>
+                            </span>
+                            <div id='content_post_" . $p->post[0] . "'><div class='post_detail'>" . $p->post[1] . "</div>
+                            <br>
+                            </div>
+                            <button id='btn_delete' type='button' name='btn_delete'  class='boton_crud' onclick='elim(". $p->post[0] .")'><i class='fa fa-times'></i></button>
+                            <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(". $p->post[0] .")'><i class='fa fa-edit'></i></button>
+                            <button id='btn_resp' type='button' name='btn_resp' class='boton_crud' onclick='publicarAjax(". $p->post[0] .")'><i class='fa fa-reply'></i></button>
+                        </div> 
+                        <div>" . imprimirTweets($p->respuestas, $pos + 1,$html) . "</div>";
     }
     return $postHtml;
 }
@@ -80,9 +82,12 @@ function imprimirTweets($tweet,$pos)
                     } else {
                         $tweets = $twitter->obtener_tweets();
                     }
-                    echo imprimirTweets($tweets,0);
-
                     ?>
+                    <div id="main_panel">
+                        <?php echo imprimirTweets($tweets, 0,$html); ?>
+                    </div>
+
+
 
                 </div>
 

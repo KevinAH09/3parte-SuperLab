@@ -14,7 +14,7 @@
 		{
 			$this->servidor = "localhost";
 			$this->usuario = "root";
-			$this->clave = "1234";
+			$this->clave = "";
 			$this->base_datos = "bd_twitter";
 			$this->conectar_base_datos();
 		}
@@ -34,7 +34,6 @@
 			$this->conexion = mysqli_connect($this->servidor,$this->usuario,$this->clave);
 			mysqli_select_db($this->conexion, $this->base_datos) or die (mysqli_error($this->conexion));
             mysqli_query ($this->conexion, "SET NAMES 'utf8'");
-
             return $this->conexion;
 		}
 
