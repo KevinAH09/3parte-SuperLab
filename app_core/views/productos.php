@@ -19,7 +19,7 @@ if (isset($_POST['btn_guardar'])) {
     $cantidad = $_POST['txt_cant'];
     $vencimiento = $_POST['txt_venc'];
     $proveedor = $_POST['txt_prov'];
-    
+
     //Invocamos la funcion INSERTAR de mantenimiento
     $message = $producto->btn_save_click();
 }
@@ -38,23 +38,21 @@ if (isset($_GET['datobusqueda'])) {
 
 //Si existen paramtros de busqueda GET
 if (isset($_GET['id'])) {
-    
-    echo "<label id='selectProducto'>" ;
+
+    echo "<label id='selectProducto'>";
     $producto->obtenerProductoUnicoo($_GET['id']);
-    echo"</label>";
-    
+    echo "</label>";
 }
 if (isset($_GET['chart'])) {
-    
-    echo "<label id='chartProducto'>" ;
+
+    echo "<label id='chartProducto'>";
     $producto->datos();
-    echo"</label>";
-    
+    echo "</label>";
 }
 
 ?>
 <div class="modal fade" id="myModalProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-dialog-center" role="document">
+    <div class="modal-dialog modal-dialog-center" id="mdialTamanio" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -101,29 +99,29 @@ if (isset($_GET['chart'])) {
                                     <td>PROVEEDOR</td>
                                 </thead>
                                 <tbody id="grid">
-                                    <?php  
+                                    <?php
                                     if (isset($_GET['datobusqueda'])) {
                                         $producto->buscarProductoss($_GET['datobusqueda']);
-                                    }
-                                    else{
+                                    } else {
                                         echo $producto->obtener_productoss();
                                     }
                                     ?>
 
                                 </tbody>
                             </table>
-                            <div>
-                            
-                            </div>
-                        </div>
-                        <div id="grafico">
-                            <!-- <button onclick="cargarDatos()">cargar datos</button> -->
-                            <canvas id="myChart" width="400" height="400"></canvas>
-
                         </div>
                     </section>
+                    <div id="grafico">
+                        <!-- <button onclick="cargarDatos()">cargar datos</button> -->
+                        <canvas id="myChartLineal" width="400" height="400"></canvas>
+                        <br>
+                        <canvas id="myChart" width="400" height="300"></canvas>
+                        <br>
+                        <canvas id="myChartCircular" width="400" height="300"></canvas>
+
+                    </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -143,18 +141,9 @@ if (isset($_GET['chart'])) {
             'width': '450px',
             'overflow': 'hidden',
             'position': 'absolute',
-            'left': '40%',
-            'top': '30%'
+            'left': '35%',
+            'top': '160px'
         });
 
     });
-
-    // $('#myModal').on('show.bs.modal', function() {
-    //     $(this).find('.modal-body').css({
-    //         // 'min-height': '300px',
-    //         // 'min-width': '200px',
-    // 		// 'overflow': 'scroll'
-    //         // 'overflow-y': 'auto'
-    //     });
-    // });
 </script>
