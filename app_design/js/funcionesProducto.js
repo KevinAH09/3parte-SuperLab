@@ -10,6 +10,14 @@ function cargarProductos(dato) {
     }
   })
     .then(function (response) { 
+
+      document.getElementById('txt_cod').value="";
+      document.getElementById('txt_nom').value="";
+      document.getElementById('txt_prec').value="";
+      document.getElementById('txt_cant').value="";
+      document.getElementById('txt_venc').value="";
+      document.getElementById('txt_prov').value="";
+
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       document.getElementById('resultados').innerHTML = temphtml.querySelector("#" + "resultados").innerHTML;
@@ -140,9 +148,9 @@ function MyChart() {
     }
   })
     .then(function (response) {
+
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
-      
       var aux = temphtml.querySelector("#" + "chartProducto");
 
       
@@ -193,8 +201,6 @@ function MyChart() {
         h = 0;
       }
 
-      
-      
       var ctx = document.getElementById('myChart');
       var ctxLineal = document.getElementById('myChartLineal');
       var ctxCircular = document.getElementById('myChartCircular');
