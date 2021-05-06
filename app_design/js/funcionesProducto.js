@@ -188,7 +188,7 @@ function MyChart() {
       }
       var procentajes = [];
       for (var h = 0; h <= ProvCant.length; h++) {
-        procentajes.push((ProvCant.shift() * 100) / aux);
+        procentajes.push(((ProvCant.shift() * 100) / aux));
         h = 0;
       }
       var ctx = document.getElementById('myChart');
@@ -209,6 +209,7 @@ function MyChart() {
           }]
         },
         options: {
+          
           plugins: {
             datalabels:
             {
@@ -225,7 +226,8 @@ function MyChart() {
                   lineHeight: 1.2
                 }
             }
-          }
+          },
+          radius: 160,
         }
         // formatter: (procentajes) => {
         //   console.log(procentajes);
@@ -242,6 +244,7 @@ function MyChart() {
             data: cantidad,
             fill: false,
             borderColor: 'rgb(42, 17, 166)',
+            borderWidth:3,
             tension: 0.1
           }]
         },
@@ -282,7 +285,7 @@ function MyChart() {
             x:{
               ticks: {
                 color: 'black',
-              }
+              },
             }
           }
         },
@@ -319,6 +322,9 @@ function MyChart() {
           },
           scales: {
             y: {
+              ticks: {
+                color: 'black',
+              },
               display: true,
               title: {
                 display: true,
@@ -332,6 +338,11 @@ function MyChart() {
                 }
               },
               beginAtZero: true
+            },
+            x:{
+              ticks: {
+                color: 'black',
+              },
             }
           }
         }
