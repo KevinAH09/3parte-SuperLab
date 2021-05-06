@@ -13,6 +13,12 @@ function cargarProductos(dato) {
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       document.getElementById('resultados').innerHTML = temphtml.querySelector("#" + "resultados").innerHTML;
+
+      // var temphtml1 = document.createElement('div');
+      // temphtml1.innerHTML = response.data;
+      // console.log(temphtml1.querySelector("#" + "grafico").innerHTML);
+      // document.getElementById('grafico').innerHTML = temphtml1.querySelector("#" + "grafico").innerHTML;
+      MyChart();
     })
     .catch(function (error) { //En caso de carga fallida del recurso
       // alertify.error(error.response.data);
@@ -21,7 +27,7 @@ function cargarProductos(dato) {
 function cargarDatos() {
 
   axios.post('index.php', dato)
-    .then(function (response) { 
+    .then(function (response) {
       alert(response.data);
     })
     .catch(function (error) { //En caso de carga fallida del recurso
@@ -69,7 +75,7 @@ function eliminarAjax() {
 
   axios.post('index.php', formdata
   )
-    .then(function (response) { 
+    .then(function (response) {
       cargarProductos('');
     })
     .catch(function (error) { //En caso de carga fallida del recurso
@@ -118,31 +124,35 @@ function validarNum(evt) {
   }
 }
 
-function generarNumero(numero){
-  return (Math.random()*numero).toFixed(0);
+function generarNumero(numero) {
+  return (Math.random() * numero).toFixed(0);
 }
 
-function colorRGB(){
-  var coolor = "("+generarNumero(255)+"," + generarNumero(255) + "," + generarNumero(255) +")";
+function colorRGB() {
+  var coolor = "(" + generarNumero(255) + "," + generarNumero(255) + "," + generarNumero(255) + ")";
   return "rgb" + coolor;
 }
 
 
 
 function MyChart() {
+  console.log("hola");
   var myData = [];
   axios.get('index.php', {
     params: {
       chart: true
     }
   })
-    .then(function (response) { 
+    .then(function (response) {
 
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
-      var aux = temphtml.querySelector("#" + "chartProducto");
+      var aux = "";
+      aux = temphtml.querySelector("#" + "chartProducto");
 
+      myData = "";
       myData = JSON.parse(aux.textContent);
+      console.log(myData);
       var nombre = [];
       var precio = [];
       var cantidad = [];
@@ -153,6 +163,7 @@ function MyChart() {
         cantidad.push(myData[i].cant);
         proveedor.push(myData[i].prov);
       }
+      console.log(nombre);
 
       var ProvCant = [];
       var ProvP = [];
@@ -176,14 +187,12 @@ function MyChart() {
         ProvCant.push(dato2);
         ProvP.push(dato1);
       }
-      var colores=[];
-      var coloresBar=[];
-      for(var i=0;i<ProvP.length;i++)
-      {
+      var colores = [];
+      var coloresBar = [];
+      for (var i = 0; i < ProvP.length; i++) {
         colores.push(colorRGB());
       }
-      for(var i=0;i<nombre.length;i++)
-      {
+      for (var i = 0; i < nombre.length; i++) {
         coloresBar.push(colorRGB());
       }
       var procentajes = [];
@@ -191,10 +200,29 @@ function MyChart() {
         procentajes.push(((ProvCant.shift() * 100) / aux));
         h = 0;
       }
-      var ctx = document.getElementById('myChart');
-      var ctxLineal = document.getElementById('myChartLineal');
+
+
+      // document.getElementById('myChart').clearRect(0, 0, document.getElementById('myChart').width, document.getElementById('myChart').height);
+
+      var ctx = '';
+      var ctxLineal = '';
+      // ctx.width = ctx.width;
+      // ctxLineal.width = ctxLineal.width;
+      var canvas = document.getElementById('myChart');
+      ctx = canvas.getContext("2d");
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctxLineal = document.getElementById('myChartLineal');
       var ctxCircular = document.getElementById('myChartCircular');
 
+      // var canvas = document.getElementById("canvas");
+      // var ctx = canvas.getContext("2d");
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      
+      if (window.grafica) {
+        window.grafica.clear();
+        window.grafica.destroy();
+      }
       new Chart(ctxCircular, {
         type: 'pie',
         data: {
@@ -209,30 +237,26 @@ function MyChart() {
           }]
         },
         options: {
-          
+
           plugins: {
             datalabels:
             {
-              color:'#fff'
+              color: '#fff'
             },
             title: {
               display: true,
               text: 'Gráfico #3, Todos los proveedores y el porcentaje de los productos que se aportan al inventario',
               color: 'rgb(39, 97, 2)',
-                font: {
-                  family: 'Times',
-                  size: 15,
-                  style: 'normal',
-                  lineHeight: 1.2
-                }
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
           },
           radius: 160,
         }
-        // formatter: (procentajes) => {
-        //   console.log(procentajes);
-        //   return procentajes.value + '%';
-        // }
       });
 
       new Chart(ctxLineal, {
@@ -244,7 +268,7 @@ function MyChart() {
             data: cantidad,
             fill: false,
             borderColor: 'rgb(42, 17, 166)',
-            borderWidth:3,
+            borderWidth: 3,
             tension: 0.1
           }]
         },
@@ -255,12 +279,12 @@ function MyChart() {
               display: true,
               text: 'Gráfico #1, Todos los productos con su cantidad por unidad',
               color: 'rgb(42, 17, 166)',
-                font: {
-                  family: 'Times',
-                  size: 15,
-                  style: 'normal',
-                  lineHeight: 1.2
-                }
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
           },
           scales: {
@@ -282,7 +306,7 @@ function MyChart() {
               },
               beginAtZero: true
             },
-            x:{
+            x: {
               ticks: {
                 color: 'black',
               },
@@ -291,7 +315,7 @@ function MyChart() {
         },
       });
 
-      new Chart(ctx, {
+      window.grafica = new Chart(ctx, {
         type: 'bar',
         data: {
 
@@ -312,12 +336,12 @@ function MyChart() {
               display: true,
               text: 'Gráfico #2, Todos los productos con su precio en colones',
               color: '#911',
-                font: {
-                  family: 'Times',
-                  size: 15,
-                  style: 'normal',
-                  lineHeight: 1.2
-                }
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
           },
           scales: {
@@ -339,7 +363,7 @@ function MyChart() {
               },
               beginAtZero: true
             },
-            x:{
+            x: {
               ticks: {
                 color: 'black',
               },
@@ -347,6 +371,7 @@ function MyChart() {
           }
         }
       });
+
 
     })
     .catch(function (error) { //En caso de carga fallida del recurso
