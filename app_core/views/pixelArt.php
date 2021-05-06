@@ -15,13 +15,21 @@
             </div>
 
             <div style="width: 40%; float:right; margin-top: 40px;">
-              <label for="color">Cambiar el color del trazado</label>
-              <input type="color" value="#ff0000" id="muestrario">
+              <div id="primero">
+                <label for="color">Seleccionar color:</label><br>
+                <input type="color" value="#ff0000" id="muestrario"><br>
+              
+                <label for="color">Seleccionar tamaño</label>
+                <input id="size" type="range" min="1" max="10" step="1" value="3"><label id="lblTam" for=""></label>
+              </div>
               <br>
-              <button style="margin-top: 10px;" id="limpiar">Eliminar todo</button>
+              <div id="segundo">
+                <button style="margin-top: 10px;" id="limpiar">Eliminar todo</button>
+                <br>
+                <button style="margin-top: 10px;" onclick="GuardarTrazado()" id="btnDescargar">Descargar trazado</button>
+              </div>
+              <br>
             </div>
-            <button style="margin-top: 10px;" onclick="GuardarTrazado()" id="btnDescargar">Descargar trazado</button>
-
           </div>
           <div style="width: 50%;">
             <input style="margin-top: 10px;" type="file" name="file-1" id="file-1" accept='image/jpeg,image/jpg,image/png' class="inputfile inputfile-1" />
@@ -40,7 +48,7 @@
 <script type="text/javascript">
   $('#pixel_art_app').on('click', function() {
     $('#myModalpixel').modal({
-      
+
     });
     $('#myModalpixel').draggable({
       containment: '#main_screen',
@@ -53,8 +61,8 @@
       'width': '450px',
       'overflow': 'hidden',
       'position': 'absolute',
-      'left': '35%',
-      'top': '160px'
+      'left': '31%',
+      'top': '110px'
     });
   });
 </script>

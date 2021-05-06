@@ -84,8 +84,8 @@
             'width': '450px',
             'overflow': 'hidden',
             'position': 'absolute',
-            'left': '35%',
-            'top': '160px'
+            'left': '31%',
+            'top': '110px'
         });
     });
 </script>

@@ -9,22 +9,24 @@ function cargarProductos(dato) {
       datobusqueda: dato
     }
   })
-    .then(function (response) { //En caso de carga exitosa del recurso
-      // console.log(response.data);
+    .then(function (response) { 
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       document.getElementById('resultados').innerHTML = temphtml.querySelector("#" + "resultados").innerHTML;
+
+      var temphtml1 = document.createElement('div');
+      temphtml1.innerHTML = response.data;
+      document.getElementById('grafico').innerHTML = temphtml1.querySelector("#" + "grafico").innerHTML;
+      MyChart();
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) {
       // alertify.error(error.response.data);
-      // console.log(error+'erooooooooooooooooorrrooroororororororororororoorororo');
     });
 }
 function cargarDatos() {
 
   axios.post('index.php', dato)
-    .then(function (response) { //En caso de carga exitosa del recurso
-      // document.getElementById("grid").innerHTML = response.data;
+    .then(function (response) {
       alert(response.data);
     })
     .catch(function (error) { //En caso de carga fallida del recurso
@@ -51,13 +53,10 @@ function insertarAjax() {
     formdata.append('txt_prov', document.getElementById('txt_prov').value);
     axios.post('index.php', formdata
     )
-      .then(function (response) { //En caso de carga exitosa del recurso
-        //alertify.set('notifier', 'position', 'top-right');
-        //Tomamos el texto que viene entre corchetes dobles
-        //alertify.success(response.data.match(/\[\[(.*?)\]\]/)[1]);
+      .then(function (response) {
         cargarProductos('');
       })
-      .catch(function (error) { //En caso de carga fallida del recurso
+      .catch(function (error) {
         // alertify.error(error.response.data);
       });
 
@@ -75,13 +74,10 @@ function eliminarAjax() {
 
   axios.post('index.php', formdata
   )
-    .then(function (response) { //En caso de carga exitosa del recurso
-      // alertify.set('notifier', 'position', 'top-right');
-      //Tomamos el texto que viene entre corchetes dobles
-      // alertify.success(response.data.match(/\[\[(.*?)\]\]/)[1]);
+    .then(function (response) {
       cargarProductos('');
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) { 
       // alertify.error(error.response.data);
     });
 }
@@ -92,14 +88,11 @@ function cargarDatosEnFormulario(codigo) {
       id: codigo
     }
   })
-    .then(function (response) { //En caso de carga exitosa del recurso
-      //Descomponemos el objeto JSON para separarlo en datos individuales
-      // console.log(response.data);
+    .then(function (response) {
 
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       var aux = temphtml.querySelector("#" + "selectProducto");
-      console.log(aux.textContent);
 
       myData = JSON.parse(aux.textContent);
       document.getElementById('txt_cod').value = myData.cod;
@@ -111,7 +104,7 @@ function cargarDatosEnFormulario(codigo) {
 
 
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) { 
       // alertify.error(error.response.data);
     });
 }
@@ -129,23 +122,31 @@ function validarNum(evt) {
   }
 }
 
+function generarNumero(numero) {
+  return (Math.random() * numero).toFixed(0);
+}
+
+function colorRGB() {
+  var coolor = "(" + generarNumero(255) + "," + generarNumero(255) + "," + generarNumero(255) + ")";
+  return "rgb" + coolor;
+}
+
+
+
 function MyChart() {
-  var myData = [];
   axios.get('index.php', {
     params: {
       chart: true
     }
   })
-    .then(function (response) { //En caso de carga exitosa del recurso
-      //Descomponemos el objeto JSON para separarlo en datos individuales
-      // console.log(response.data);
-
+    .then(function (response) {
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
+      
       var aux = temphtml.querySelector("#" + "chartProducto");
-      // console.log(aux.textContent);
 
-      myData = JSON.parse(aux.textContent);
+      
+     var myData = JSON.parse(aux.textContent);
       var nombre = [];
       var precio = [];
       var cantidad = [];
@@ -156,7 +157,6 @@ function MyChart() {
         cantidad.push(myData[i].cant);
         proveedor.push(myData[i].prov);
       }
-
       var ProvCant = [];
       var ProvP = [];
       var dato1;
@@ -179,11 +179,22 @@ function MyChart() {
         ProvCant.push(dato2);
         ProvP.push(dato1);
       }
+      var colores = [];
+      var coloresBar = [];
+      for (var i = 0; i < ProvP.length; i++) {
+        colores.push(colorRGB());
+      }
+      for (var i = 0; i < nombre.length; i++) {
+        coloresBar.push(colorRGB());
+      }
       var procentajes = [];
       for (var h = 0; h <= ProvCant.length; h++) {
-        procentajes.push((ProvCant.shift() * 100) / aux);
+        procentajes.push(((ProvCant.shift() * 100) / aux));
         h = 0;
       }
+
+      
+      
       var ctx = document.getElementById('myChart');
       var ctxLineal = document.getElementById('myChartLineal');
       var ctxCircular = document.getElementById('myChartCircular');
@@ -195,33 +206,33 @@ function MyChart() {
           datasets: [{
 
             data: procentajes,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-            ],
+            backgroundColor: colores,
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(0, 0, 0)',
             tension: 0.1
           }]
         },
         options: {
+
           plugins: {
             datalabels:
             {
-              color:'#fff'
+              color: '#fff'
             },
             title: {
               display: true,
               text: 'Gráfico #3, Todos los proveedores y el porcentaje de los productos que se aportan al inventario',
+              color: 'rgb(39, 97, 2)',
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
-          }
+          },
+          radius: 160,
         }
-        // formatter: (procentajes) => {
-        //   console.log(procentajes);
-        //   return procentajes.value + '%';
-        // }
       });
 
       new Chart(ctxLineal, {
@@ -229,10 +240,11 @@ function MyChart() {
         data: {
           labels: nombre,
           datasets: [{
-            label: 'Gráfico #1, Todos los productos con sus cantidades',
+            label: 'Cantidad',
             data: cantidad,
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(42, 17, 166)',
+            borderWidth: 3,
             tension: 0.1
           }]
         },
@@ -241,24 +253,39 @@ function MyChart() {
             legend: false,
             title: {
               display: true,
-              text: 'Gráfico #1, Todos los productos con sus cantidades',
+              text: 'Gráfico #1, Todos los productos con su cantidad por unidad',
+              color: 'rgb(42, 17, 166)',
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
           },
           scales: {
             y: {
+              ticks: {
+                color: 'black',
+              },
               display: true,
               title: {
                 display: true,
                 text: 'Cantidades',
-                color: '#911',
+                color: 'rgb(42, 17, 166)',
                 font: {
                   family: 'Times',
-                  size: 20,
+                  size: 15,
                   style: 'normal',
                   lineHeight: 1.2
                 }
               },
               beginAtZero: true
+            },
+            x: {
+              ticks: {
+                color: 'black',
+              },
             }
           }
         },
@@ -270,23 +297,10 @@ function MyChart() {
 
           labels: nombre,
           datasets: [{
+            label: 'Precio',
             data: precio,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
+            backgroundColor: coloresBar,
+            borderColor: 'black',
             borderWidth: 1
           }]
         },
@@ -296,11 +310,21 @@ function MyChart() {
             legend: false,
             title: {
               display: true,
-              text: 'Gráfico #2, Todos los productos con sus precios',
+              text: 'Gráfico #2, Todos los productos con su precio en colones',
+              color: '#911',
+              font: {
+                family: 'Times',
+                size: 15,
+                style: 'normal',
+                lineHeight: 1.2
+              }
             }
           },
           scales: {
             y: {
+              ticks: {
+                color: 'black',
+              },
               display: true,
               title: {
                 display: true,
@@ -308,19 +332,23 @@ function MyChart() {
                 color: '#911',
                 font: {
                   family: 'Times',
-                  size: 20,
+                  size: 15,
                   style: 'normal',
                   lineHeight: 1.2
                 }
               },
               beginAtZero: true
+            },
+            x: {
+              ticks: {
+                color: 'black',
+              },
             }
           }
         }
       });
-
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) {
       // alertify.error(error.response.data);
     });
 

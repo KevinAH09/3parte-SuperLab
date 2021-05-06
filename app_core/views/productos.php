@@ -1,18 +1,14 @@
 <?php
 
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
 
 require_once(__LIB_PATH . "html.php");
 require_once(__CTR_PATH . "ctr_producto.php");
 $html = new HTML();
-$producto = new CTR_producto(); //variable del Controlador
+$producto = new CTR_producto(); 
 
-$message = ""; //variable que contendrá los mensajes de alerta para el usuario
+$message = ""; 
 
-// Se verifica si se presiona el botón y si se pasa el valor vía POST correctamente
 if (isset($_POST['btn_guardar'])) {
-    //Parametros POST provenientes de los campos de texto del formulario
     $codigo = $_POST['txt_cod'];
     $nombre = $_POST['txt_nom'];
     $precio = $_POST['txt_prec'];
@@ -20,15 +16,12 @@ if (isset($_POST['btn_guardar'])) {
     $vencimiento = $_POST['txt_venc'];
     $proveedor = $_POST['txt_prov'];
 
-    //Invocamos la funcion INSERTAR de mantenimiento
     $message = $producto->btn_save_click();
 }
 
 if (isset($_POST['btn_eliminar'])) {
-    //Parametros POST provenientes de los campos de texto del formulario
     $codigo = $_POST['txt_cod'];
 
-    //Invocamos la funcion ELIMINAR de mantenimiento
     $message = $producto->btn_delete_click($codigo);
 }
 
@@ -36,7 +29,6 @@ if (isset($_GET['datobusqueda'])) {
     $producto->buscarProductoss($_GET['datobusqueda']);
 }
 
-//Si existen paramtros de busqueda GET
 if (isset($_GET['id'])) {
 
     echo "<label id='selectProducto'>";
@@ -112,12 +104,11 @@ if (isset($_GET['chart'])) {
                         </div>
                     </section>
                     <div id="grafico">
-                        <!-- <button onclick="cargarDatos()">cargar datos</button> -->
-                        <canvas id="myChartLineal" width="400" height="400"></canvas>
+                        <canvas id="myChartLineal" width="400" height="250" ></canvas>
                         <br>
-                        <canvas id="myChart" width="400" height="300"></canvas>
+                        <canvas id="myChart" width="400" height="250"></canvas>
                         <br>
-                        <canvas id="myChartCircular" width="400" height="300"></canvas>
+                        <canvas id="myChartCircular" width="400" height="250"></canvas>
 
                     </div>
                 </div>
@@ -137,12 +128,12 @@ if (isset($_GET['chart'])) {
 
         });
         $('#myModalProducto').css({
-            'height': '390px',
+            'height': '450px',
             'width': '450px',
             'overflow': 'hidden',
             'position': 'absolute',
-            'left': '35%',
-            'top': '160px'
+            'left': '31%',
+            'top': '110px'
         });
 
     });

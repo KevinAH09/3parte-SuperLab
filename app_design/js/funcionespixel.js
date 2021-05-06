@@ -5,12 +5,14 @@ window.onload = function () {
     // VARIABLES
     //======================================================================
     let miCanvas = document.querySelector('#canvas');
+    let tam = document.getElementById('size');
     let lineas = [];
     let pintar = false;
     // Marca el nuevo punto
     let nuevaPosicionX = 0;
     let nuevaPosicionY = 0;
     let color = '';
+    let tamano = 0;
 
     let posicion = miCanvas.getBoundingClientRect()
     correccionX = posicion.x;
@@ -37,7 +39,8 @@ window.onload = function () {
         lineas[lineas.length - 1].push({
             x: nuevaPosicionX,
             y: nuevaPosicionY,
-            c: color
+            c: color,
+            t:tamano
         });
     }
 
@@ -61,6 +64,7 @@ window.onload = function () {
                 nuevaPosicionX = (event.clientX - posicion2.left) * scaleX;
                 nuevaPosicionY = (event.clientY - posicion2.top) * scaleY
                 color = document.getElementById("muestrario").value;
+                tamano=tam.value;
             }
             // Guarda el trazado
             guardarTrazado();
@@ -71,7 +75,7 @@ window.onload = function () {
                 segmento.forEach(function (punto, index) {
                     // ctx.lineTo(punto.x, punto.y);
                     ctx.fillStyle = segmento[0].c;
-                    ctx.fillRect(punto.x, punto.y, 3, 3);
+                    ctx.fillRect(punto.x, punto.y, segmento[0].t, segmento[0].t);
                 });
             });
             ctx.stroke();
@@ -119,6 +123,13 @@ window.onload = function () {
     function borrar() {
         canvas.width = canvas.width;
         lineas = [];
+    }
+    cambiarLabel();
+    var input2 = document.getElementById('size')
+    input2.addEventListener('change', cambiarLabel);
+
+    function cambiarLabel(){
+        document.getElementById('lblTam').innerHTML = document.getElementById('size').value;
     }
 
 };
