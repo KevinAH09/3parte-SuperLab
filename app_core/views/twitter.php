@@ -5,7 +5,7 @@ require_once(__CTR_PATH . "ctr_twitter.php");
 
 $html = new HTML();
 $twitter = new CTR_twitter(); //variable del Controlador
-
+$htmlpost = "";
 //Evento click (PUBLICAR) se activa al hacer click en el boton via POST
 if (isset($_POST['btn_save'])) {
     $twitter->btn_save_click();
@@ -17,6 +17,29 @@ if (isset($_POST['btn_delete'])) {
 
 if (isset($_POST['btn_edit'])) {
     $twitter->btn_edit_click();
+}
+
+function imprimirTweets($tweet,$pos)
+{
+    $espacio=20;
+    $espacio= $espacio*$pos;
+    $postHtml = "";
+    foreach ($tweet as $p) {
+        $postHtml .=  "<div class='post_block' style='margin-left: ".$espacio."px'>
+        <span class='post_text' id='post_".$p->post[0]."'>
+            <div class='published_date'>
+                <span>Publicado el ".$p->post[2]." </span>
+            </div>
+        </span>
+        <div id='content_post_".$p->post[0]."'>
+            <div class='post_detail'>".$p->post[1]."</div><br />
+        </div>
+        <button id='btn_delete' type='button' name='btn_delete'  class='boton_crud' onclick='eliminarAjax(".$p->post[0].")'><i class='fa fa-times'></i></button>
+        <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(".$p->post[0].")'><i class='fa fa-edit'></i></button>
+        <button id='btn_resp' type='button' name='btn_resp' class='boton_crud' onclick='reponderAjax(".$p->post[0].")'><i class='fa fa-reply'></i></button>
+        </div><div>" . imprimirTweets($p->respuestas,$pos+1) . "</div>";
+    }
+    return $postHtml;
 }
 ?>
 
@@ -57,37 +80,18 @@ if (isset($_POST['btn_edit'])) {
                     } else {
                         $tweets = $twitter->obtener_tweets();
                     }
+                    echo imprimirTweets($tweets,0);
 
                     ?>
 
-                    <div id="main_panel">
-
-                        <?php foreach ($tweets as $t) { ?>
-
-                            <div class='post_block'>
-                                <span class='post_text' id='post_<?php echo $t[0]; ?>'>
-                                    <div class='published_date'>
-                                        <span>Publicado el <?php echo $t[2]; ?></span>
-                                    </div>
-                                </span>
-                                <div id='content_post_<?php echo $t[0]; ?>'>
-                                    <div class='post_detail'><?php echo $t[1]; ?></div><br />
-                                </div>
-                                <button id='btn_delete' type='button' name='btn_delete'  class='boton_crud' onclick='eliminarAjax(<?php echo $t[0] ?>)'><i class="fa fa-times"></i></button>
-                                <button id='btn_edit' type='button' name='btn_edit' class='boton_crud' onclick='editarAjax(<?php echo $t[0] ?>)'><i class="fa fa-edit"></i></button>
-                                <button id='btn_resp' type='button' name='btn_resp' class='boton_crud' onclick='reponderAjax(<?php echo $t[0] ?>)'><i class="fa fa-reply"></i></button>
-                            </div>
-
-                        <?php } ?>
-
-                    </div>
-
-
                 </div>
 
+
             </div>
+
         </div>
     </div>
+</div>
 </div>
 <script type="text/javascript">
     $('#twitter_app').on('click', function() {

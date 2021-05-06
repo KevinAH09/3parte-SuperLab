@@ -21,18 +21,7 @@ class MDL_twitter
 									   FROM tbl_posts
 									   ORDER BY tbl_posts.id DESC");
 
-		$posts = array(); //matriz
-		$num_fila = 0;
-
-		//obtenemos cada registro y cada campo
-		while ($fila = $this->conexion->extraer_registro()) {
-			$posts[$num_fila][0] = $fila[0]; //id
-			$posts[$num_fila][1] = $fila[1]; //detalle del post
-			$posts[$num_fila][2] = $fila[2]; //fecha
-			$num_fila++;
-		}
-
-		return $posts;
+		return $this->extraerDatos();
 	}
 
 	public function buscar_tweets($datospost = array())
@@ -40,9 +29,12 @@ class MDL_twitter
 
 		$this->conexion->consulta("SELECT tbl_posts.id, tbl_posts.post,tbl_posts.date,tbl_posts.tbl_posts_id 
 									   FROM tbl_posts WHERE tbl_posts.post LIKE '" . $datospost[0] . "%' ORDER BY tbl_posts.id DESC");
-
+		return $this->extraerDatos();
+	}
+	public function extraerDatos()
+	{
 		$postpadres = array();
-		$posts = array(); //matriz
+		$posts = array();
 
 
 		$num_fila = 0;
@@ -71,7 +63,7 @@ class MDL_twitter
 				array_push($postpadres, $valor);
 			}
 		}
-		var_dump($postpadres);
+		return $postpadres;
 	}
 
 	//Función para insertar registros
