@@ -57,7 +57,33 @@ canvas {
 .inputfile-1+label {
     color: #fff;
     /* background-color: #c39f77; */
-    background: #3AB0B0;
+    background: #2948f7;
+}
+
+#btnDescargar{
+    color: #fff;
+    /* background-color: #c39f77; */
+    background: #1bcc7a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Lato';
+    border: none;
+}
+#limpiar {
+    color: #fff;
+    /* background-color: #c39f77; */
+    background: #94bb2a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Lato';
+    border: none;
+}
+#btnDescargar:hover{
+    background-color: #9f8465;
+    
+}
+#limpiar:hover {
+    background-color: #9f8465;
 }
 
 .inputfile-1:focus+label,
@@ -69,6 +95,7 @@ canvas {
 #mdialTamanio {
     width: 100% !important;
 }
+
 #myModalpixel {
     width: 600px !important;
 }
