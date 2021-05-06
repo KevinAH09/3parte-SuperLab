@@ -113,11 +113,11 @@ if (isset($_GET['chart'])) {
                     </section>
                     <div id="grafico">
                         <!-- <button onclick="cargarDatos()">cargar datos</button> -->
-                        <canvas id="myChartLineal" width="400" height="400"></canvas>
+                        <canvas id="myChartLineal" width="400" height="250"></canvas>
                         <br>
-                        <canvas id="myChart" width="400" height="300"></canvas>
+                        <canvas id="myChart" width="400" height="250"></canvas>
                         <br>
-                        <canvas id="myChartCircular" width="400" height="300"></canvas>
+                        <canvas id="myChartCircular" width="400" height="250"></canvas>
 
                     </div>
                 </div>
@@ -137,12 +137,12 @@ if (isset($_GET['chart'])) {
 
         });
         $('#myModalProducto').css({
-            'height': '390px',
+            'height': '450px',
             'width': '450px',
             'overflow': 'hidden',
             'position': 'absolute',
-            'left': '35%',
-            'top': '160px'
+            'left': '31%',
+            'top': '110px'
         });
 
     });

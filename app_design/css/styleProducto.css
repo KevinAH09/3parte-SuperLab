@@ -93,18 +93,20 @@ tbody tr:nth-child(odd) {background: #FFF}
 	background-color: #FFF;
 	/* margin-top: 1px; */
     width:580px;
-	height:260px;
+	height:400px;
 	overflow: scroll;
 }
 
 #mdialTamanio {
     width: 100% !important;
+    /* height: 100% !important; */
 }
 #myModalProducto {
     width: 600px !important;
+    height: 500px!important;
 }
 #grafico
 {
     position: relative;
-    margin: 20px 20px;
+    margin: 15px 15px;
 }
