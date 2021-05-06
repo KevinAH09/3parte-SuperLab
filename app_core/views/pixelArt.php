@@ -16,11 +16,11 @@
 
             <div style="width: 40%; float:right; margin-top: 40px;">
               <div id="primero">
-                <label for="color">Cambiar el color del trazado</label>
-                <input type="color" value="#ff0000" id="muestrario">
+                <label for="color">Seleccionar color:</label><br>
+                <input type="color" value="#ff0000" id="muestrario"><br>
               
-                <label for="color">Tamaño en un rango entre 1 y 10</label>
-                <input id="size" type="range" min="1" max="10" step="1" value="3"><br />
+                <label for="color">Seleccionar tamaño</label>
+                <input id="size" type="range" min="1" max="10" step="1" value="3"><label id="lblTam" for=""></label>
               </div>
               <br>
               <div id="segundo">

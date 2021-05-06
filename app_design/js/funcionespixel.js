@@ -48,7 +48,6 @@ window.onload = function () {
      * Funcion dibuja la linea
      */
     function dibujarLinea(event) {
-        console.log(tam.value);
         // event.preventDefault();
         let posicion2 = miCanvas.getBoundingClientRect()
         if (pintar) {
@@ -124,6 +123,13 @@ window.onload = function () {
     function borrar() {
         canvas.width = canvas.width;
         lineas = [];
+    }
+    cambiarLabel();
+    var input2 = document.getElementById('size')
+    input2.addEventListener('change', cambiarLabel);
+
+    function cambiarLabel(){
+        document.getElementById('lblTam').innerHTML = document.getElementById('size').value;
     }
 
 };
