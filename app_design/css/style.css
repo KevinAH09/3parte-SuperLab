@@ -115,6 +115,7 @@ body {
 	width: 95%;
 	height: 90%;
 }
+
 #panel_fondo {
 	overflow: auto;
 	position: relative;
@@ -122,6 +123,7 @@ body {
 	width: 95%;
 	height: 90%;
 }
+
 #panel_fond {
 	overflow: auto;
 	position: relative;
@@ -130,6 +132,7 @@ body {
 	height: 90%;
 	background-color: mistyrose;
 }
+
 .fond {
 	position: relative;
 	width: 100px;
@@ -235,43 +238,118 @@ body {
 	margin-left: 340px;
 }
 
-
-.ui-datepicker-title {
-	color: white;
-}
-
 .ui-datepicker {
-	width: 15.20em !important;
-	font-family: 'Jaldi', sans-serif !important;
-	border: 1px solid rgb(122, 120, 120) !important;
+	background: rgba(0, 0, 0, 0.4);
 }
 
 .ui-datepicker-header {
-	border-radius: 0px !important;
-	background-color: #525050 !important;
-	background: #966161 !important;
-	border: none !important;
+	/* background: url('../img/dark_leather.png') repeat 0 0 #000; */
+	background: rgb(34, 34, 34);
+	color: #e0e0e0;
+	font-weight: bold;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	text-shadow: 1px -1px 0px #000;
+	filter: dropshadow(color=#000, offx=1, offy=-1);
+	line-height: 30px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #111;
 }
 
+.ui-datepicker-title {
+	text-align: center;
+}
+
+.ui-datepicker-prev,
 .ui-datepicker-next {
-	background-color: lightblue;
-	color: #000 !important;
-	top: 3px !important;
-	right: 3px !important;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+	background: springgreen;
+	line-height: 600%;
+	overflow: hidden;
 }
 
-.ui-datepicker-prev {
-	background-color: lightblue;
-	color: #000 !important;
-	top: 3px !important;
-	left: 3px !important;
+.ui-datepicker thead {
+	background-color: #504f4f;
+	color: white;
+	border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker th {
+	text-transform: uppercase;
+	font-size: 10pt;
+	padding: 5px 0;
+	color: #ffffff;
+}
+
+.ui-datepicker tbody td {
+	padding: 0;
+	border-right: 1px solid rgb(0, 0, 0);
+}
+
+.ui-datepicker tbody td:last-child {
+	border-right: 0px;
+}
+
+.ui-datepicker tbody tr {
+	border-bottom: 1px solid rgb(121, 121, 121);
+}
+
+.ui-datepicker tbody tr:last-child {
+	border-bottom: 0px;
+}
+
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+	text-shadow: 1px 1px 0px #fff;
+	filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+.ui-datepicker-calendar .ui-state-default {
+	background: #ededed;
+	background: -moz-linear-gradient(top, #ededed 0%, #dedede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #dedede));
+	background: -webkit-linear-gradient(top, #ededed 0%, #dedede 100%);
+	background: -o-linear-gradient(top, #ededed 0%, #dedede 100%);
+	background: -ms-linear-gradient(top, #ededed 0%, #dedede 100%);
+	background: linear-gradient(top, #ededed 0%, #dedede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dedede', GradientType=0);
+	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+
+
+.ui-datepicker-calendar .ui-state-active {
+	background: #6fddf8;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	color: #e0e0e0;
+	text-shadow: 0px 1px 0px #4d7a85;
+	filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+	border: 1px solid #55838f;
+	position: relative;
+	margin: -1px;
 }
 
 .ui-datepicker-next:hover {
 	border: none !important;
 	top: 3px !important;
 	right: 3px !important;
-	background: rgb(134, 255, 97) !important;
+	background: rgb(252, 255, 97) !important;
 	cursor: pointer;
 }
 
@@ -279,19 +357,6 @@ body {
 	border: none !important;
 	top: 3px !important;
 	left: 3px !important;
-	background: rgb(134, 255, 97) !important;
+	background: rgb(252, 255, 97) !important;
 	cursor: pointer;
-}
-
-.ui-state-default {
-	background: none !important;
-	background-color: #be4242;
-}
-
-#date-picker-expirate .ui-datepicker-calendar {
-	display: none;
-}
-.ui-datepicker-calendar .ui-state-active {
-    color: #e91e62;
-    border: 1px solid #e91e62;
 }
