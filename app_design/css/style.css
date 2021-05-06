@@ -120,15 +120,16 @@ body {
 	overflow: auto;
 	position: relative;
 	margin: auto;
-	width: 95%;
+	width: 90%;
 	height: 90%;
 }
 
 #panel_fond {
 	overflow: auto;
 	position: relative;
+	margin: 5px;
 	margin: auto;
-	width: 95%;
+	width: 90%;
 	height: 90%;
 	background-color: mistyrose;
 }

@@ -1,11 +1,11 @@
 #canvas {
     /* background-color: #0D0909; */
     width: 300px;
-    height: 200px;
-    border: 1px black solid;
+    height: 300px;
+    border: 3px black solid;
     background-color: white;
     cursor: url("https://static.cargo.site/images/up.png"), auto !important;
-    
+
 }
 
 .container-input {
@@ -57,33 +57,40 @@
 
 
 .inputfile-1+label {
-    color: #fff;
+    color: rgb(0, 0, 0);
     /* background-color: #c39f77; */
-    background: #2948f7;
+    background: #e7d000;
+    border-radius: 6px;
 }
 
-#btnDescargar{
+#btnDescargar {
     color: #fff;
     /* background-color: #c39f77; */
-    background: #1bcc7a;
+    /* background: #008547; */
+    background: #2948f7;
     font-size: 16px;
     font-weight: normal;
     font-family: 'Lato';
     border: none;
+    border-radius: 6px;
 }
+
 #limpiar {
     color: #fff;
     /* background-color: #c39f77; */
-    background: #94bb2a;
+    background: #9e1200;
     font-size: 16px;
     font-weight: normal;
     font-family: 'Lato';
     border: none;
+    border-radius: 6px;
 }
-#btnDescargar:hover{
+
+#btnDescargar:hover {
     background-color: #9f8465;
-    
+
 }
+
 #limpiar:hover {
     background-color: #9f8465;
 }
@@ -100,9 +107,32 @@
 
 #myModalpixel {
     width: 600px !important;
-    height: 500px!important;
+    height: 500px !important;
 }
-.signature-pad{
-    width:580px;
-	height:400px;
+
+.signature-pad {
+    width: 580px;
+    height: 400px;
+}
+
+#primero {
+    /* border: 6px solid #323333; */
+    background: #5DEAA8;
+    background-color: rgb(145, 180, 194);
+    /* height: 100px; */
+    /* width: 200px;
+    padding: 10px; */
+    margin: 10px;
+    border-radius: 6px;
+}
+#segundo {
+    /* border: 6px solid #3EC483; */
+    background: #5DEAA8;
+    background-color: rgb(145, 180, 194);
+    height: 100px;
+    text-align: center;
+    /* width: 200px;
+    padding: 10px; */
+    margin: 10px;
+    border-radius: 6px;
 }
