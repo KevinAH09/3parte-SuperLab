@@ -6,6 +6,7 @@ function buscarAjax(){
     axios.post('index.php', formdata
       )
       .then(function (response) { //En caso de carga exitosa del recurso
+        console.log(response.data);
         recargarElemento("index.php","main_panel", formdata);
       })
       .catch(function (error) { //En caso de carga fallida del recurso
