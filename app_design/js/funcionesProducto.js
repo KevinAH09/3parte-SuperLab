@@ -9,7 +9,7 @@ function cargarProductos(dato) {
       datobusqueda: dato
     }
   })
-    .then(function (response) { //En caso de carga exitosa del recurso
+    .then(function (response) { 
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       document.getElementById('resultados').innerHTML = temphtml.querySelector("#" + "resultados").innerHTML;
@@ -19,7 +19,7 @@ function cargarProductos(dato) {
       document.getElementById('grafico').innerHTML = temphtml1.querySelector("#" + "grafico").innerHTML;
       MyChart();
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) {
       // alertify.error(error.response.data);
     });
 }
@@ -56,7 +56,7 @@ function insertarAjax() {
       .then(function (response) {
         cargarProductos('');
       })
-      .catch(function (error) { //En caso de carga fallida del recurso
+      .catch(function (error) {
         // alertify.error(error.response.data);
       });
 
@@ -77,7 +77,7 @@ function eliminarAjax() {
     .then(function (response) {
       cargarProductos('');
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) { 
       // alertify.error(error.response.data);
     });
 }
@@ -93,7 +93,6 @@ function cargarDatosEnFormulario(codigo) {
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
       var aux = temphtml.querySelector("#" + "selectProducto");
-      console.log(aux.textContent);
 
       myData = JSON.parse(aux.textContent);
       document.getElementById('txt_cod').value = myData.cod;
@@ -105,7 +104,7 @@ function cargarDatosEnFormulario(codigo) {
 
 
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) { 
       // alertify.error(error.response.data);
     });
 }
@@ -135,23 +134,19 @@ function colorRGB() {
 
 
 function MyChart() {
-  console.log("hola");
-  var myData = [];
   axios.get('index.php', {
     params: {
       chart: true
     }
   })
     .then(function (response) {
-
       var temphtml = document.createElement('div');
       temphtml.innerHTML = response.data;
-      var aux = "";
-      aux = temphtml.querySelector("#" + "chartProducto");
+      
+      var aux = temphtml.querySelector("#" + "chartProducto");
 
-      myData = "";
-      myData = JSON.parse(aux.textContent);
-      console.log(myData);
+      
+     var myData = JSON.parse(aux.textContent);
       var nombre = [];
       var precio = [];
       var cantidad = [];
@@ -162,8 +157,6 @@ function MyChart() {
         cantidad.push(myData[i].cant);
         proveedor.push(myData[i].prov);
       }
-      console.log(nombre);
-
       var ProvCant = [];
       var ProvP = [];
       var dato1;
@@ -200,28 +193,12 @@ function MyChart() {
         h = 0;
       }
 
-
-      // document.getElementById('myChart').clearRect(0, 0, document.getElementById('myChart').width, document.getElementById('myChart').height);
-
-      var ctx = '';
-      var ctxLineal = '';
-      // ctx.width = ctx.width;
-      // ctxLineal.width = ctxLineal.width;
-      var canvas = document.getElementById('myChart');
-      ctx = canvas.getContext("2d");
-      // ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctxLineal = document.getElementById('myChartLineal');
+      
+      
+      var ctx = document.getElementById('myChart');
+      var ctxLineal = document.getElementById('myChartLineal');
       var ctxCircular = document.getElementById('myChartCircular');
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      
-      // if (window.grafica) {
-      //   window.grafica.clear();
-      //   window.grafica.destroy();
-      // }
       new Chart(ctxCircular, {
         type: 'pie',
         data: {
@@ -314,7 +291,7 @@ function MyChart() {
         },
       });
 
-      window.grafica = new Chart(ctx, {
+      new Chart(ctx, {
         type: 'bar',
         data: {
 
@@ -370,10 +347,8 @@ function MyChart() {
           }
         }
       });
-
-
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) {
       // alertify.error(error.response.data);
     });
 
