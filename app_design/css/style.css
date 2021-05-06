@@ -209,7 +209,6 @@ body {
 
 .imgFondo {
 	float: inline-end;
-
 }
 
 
@@ -217,11 +216,24 @@ body {
 	width: 455px;
 	height: 380px;
 }
-
+.modal-content {
+	background-color: rgb(192, 192, 192);
+}
 .modal-header {
+	text-align: center;
 	height: 40px;
-	background-color: rgb(194, 194, 194);
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	background-color: rgb(56, 56, 56);
+}
+.modal-header button{
+	width: 30px;
+	height: 26px;
+	border-radius: 8px;
+	color: white;
+	background-color: rgb(255, 0, 0);
+}
+.modal-header span{
+	color: white;
 }
 
 #btn_config {
