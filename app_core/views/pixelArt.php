@@ -40,7 +40,7 @@
 <script type="text/javascript">
   $('#pixel_art_app').on('click', function() {
     $('#myModalpixel').modal({
-      
+
     });
     $('#myModalpixel').draggable({
       containment: '#main_screen',
@@ -53,8 +53,8 @@
       'width': '450px',
       'overflow': 'hidden',
       'position': 'absolute',
-      'left': '35%',
-      'top': '160px'
+      'left': '31%',
+      'top': '110px'
     });
   });
 </script>

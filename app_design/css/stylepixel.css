@@ -99,4 +99,9 @@ canvas {
 
 #myModalpixel {
     width: 600px !important;
+    height: 500px!important;
+}
+.signature-pad{
+    width:580px;
+	height:400px;
 }

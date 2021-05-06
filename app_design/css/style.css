@@ -155,6 +155,18 @@ body {
 	text-align: center;
 	top: 70px;
 }
+#mdialTamanio {
+    width: 100% !important;
+}
+
+#myModalfondo {
+    width: 600px !important;
+    height: 500px!important;
+}
+#panel_fond{
+    width:580px;
+	height:400px;
+}
 
 .icons {
 	position: relative;
