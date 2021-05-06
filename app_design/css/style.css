@@ -115,6 +115,43 @@ body {
 	width: 95%;
 	height: 90%;
 }
+#panel_fondo {
+	overflow: auto;
+	position: relative;
+	margin: auto;
+	width: 95%;
+	height: 90%;
+}
+#panel_fond {
+	overflow: auto;
+	position: relative;
+	margin: auto;
+	width: 95%;
+	height: 90%;
+	background-color: mistyrose;
+}
+.fond {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 30px;
+	float: left;
+	cursor: pointer;
+	background-position: top center;
+}
+
+.label_fond {
+	position: relative;
+	width: 100%;
+	height: 13px;
+	color: #DDD;
+	background: rgba(0, 0, 0, 0.4);
+	font-family: Segoe UI, Verdana;
+	font-size: 12px;
+	border-radius: 8px;
+	text-align: center;
+	top: 70px;
+}
 
 .icons {
 	position: relative;

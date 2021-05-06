@@ -52,6 +52,7 @@ $html = new HTML(); //Invocamos al html helper
 	<?php require_once(__VWS_PATH . "twitter.php"); ?>
 	<?php require_once(__VWS_PATH . "pixelArt.php"); ?>
 	<?php require_once(__VWS_PATH . "productos.php"); ?>
+	<?php require_once(__VWS_PATH . "fondo.php"); ?>
 	
 </body>
 

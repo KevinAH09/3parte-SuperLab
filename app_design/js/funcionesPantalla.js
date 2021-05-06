@@ -12,6 +12,10 @@ function miFuncionLoad() {
     $("#date").datepicker({
 
     });
+    var iconsa = document.getElementsByClassName('fond');
+    for (var i = 0; i < iconsa.length; i++) {
+        iconsa[i].addEventListener('click', cambiar, false);
+    }
 }
 function mostrarUocultar() {
     var x = document.getElementById("date");
@@ -31,4 +35,10 @@ function reloj() {
     var segundos = fecha.getSeconds();
 
     document.getElementById('lbl_time_top').innerHTML = innerHTML = semana[dia] + " " + horas + ':' + minutos + ':' + segundos;
+}
+function cambiar() {
+    var unlock = document.getElementById('main_screen');
+
+    unlock.style.background = "url(\"" + this.id + "\") no-repeat center center";
+    unlock.style.backgroundSize = " 100% 100%"; 
 }
