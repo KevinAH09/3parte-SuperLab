@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 02:24:54
+-- Tiempo de generación: 07-05-2021 a las 05:23:53
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.4.16
 
@@ -43,18 +43,15 @@ CREATE TABLE `tbl_productos` (
 
 INSERT INTO `tbl_productos` (`id`, `codigo`, `nombre`, `precio`, `cantidad`, `vencimiento`, `proveedor`) VALUES
 (1, 'PQ-0015', 'Sal Diamante Verde', 95, 200, '2021-04-10', 'Coopeagri'),
-(2, 'PQ-0008', 'Galletas Saladitas', 200, 16, '2021-04-10', 'Coopeagri'),
-(3, 'PQ-0006', 'Esponja la Negrita', 334, 200, '2021-04-10', 'Coopeagri'),
-(4, 'PQ-0009', 'Jabon Protex', 280, 30, '2021-04-10', 'Coopeagri'),
+(2, 'PQ-0008', 'Galletas Saladitas', 200, 16, '2021-04-10', 'Maxi Pali'),
+(3, 'PQ-0006', 'Esponja la Negrita', 334, 200, '2021-04-10', 'BM'),
+(4, 'PQ-0009', 'Jabon Protex', 280, 30, '2021-04-10', 'Maxi Pali'),
 (5, 'PQ-0011', 'Meneitos Jacks CremiDulce', 261, 15, '2021-04-10', 'Coopeagri'),
-(6, 'PQ-0012', 'Natilla del Prado Especial', 300, 30, '2021-04-10', 'Coopeagri'),
-(7, 'PQ-0016', 'Tortiricas Gruesitas', 375, 23, '2021-04-10', 'Coopeagri'),
-(8, 'PQ-0004', 'Coca Cola', 900, 10, '2021-04-10', 'Coopeagri'),
+(6, 'PQ-0012', 'Natilla del Prado Especial', 300, 30, '2021-04-10', 'BM'),
+(7, 'PQ-0016', 'Tortiricas Gruesitas', 375, 23, '2021-04-10', 'La Corona'),
+(8, 'PQ-0004', 'Coca Cola', 900, 100, '2021-04-10', 'BM'),
 (9, 'PQ-0003', 'Café 1820', 1340, 200, '2021-04-10', 'Coopeagri'),
-(10, 'PQ-0014', 'Pepsi', 850, 100, '2021-04-10', 'Coopeagri'),
-(28, 'PQ-00200', 'Helado', 3423, 50, '2021-04-10', 'coopeagri'),
-(29, 'PQ-00207', 'f4543', 3423, 50, '2021-05-14', 'coopeagri'),
-(30, 'PQ-00208', 'caca', 3423, 50, '2021-05-08', 'coopeagri');
+(10, 'PQ-0014', 'Pepsi', 850, 100, '2021-04-10', 'Maxi Pali');
 
 --
 -- Índices para tablas volcadas
@@ -75,10 +72,9 @@ ALTER TABLE `tbl_productos`
 -- AUTO_INCREMENT de la tabla `tbl_productos`
 --
 ALTER TABLE `tbl_productos`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
