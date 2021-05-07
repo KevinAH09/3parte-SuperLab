@@ -37,7 +37,7 @@ function cargarDatos() {
     .then(function (response) {
       alert(response.data);
     })
-    .catch(function (error) { //En caso de carga fallida del recurso
+    .catch(function (error) {
       // alertify.error(error.response.data);
     });
 }

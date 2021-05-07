@@ -71,7 +71,7 @@ if (isset($_GET['chart'])) {
                             <br>
                             <button type="button" name="btn_guardar" id="btn_guardar" tabindex="5" onclick="insertarAjax()">Guardar</button>
 
-                            <button type="button" name="deleteAJAX" id="deleteAJAX" tabindex="6" onclick="eliminarAjax()">Eliminar AJAX</button>
+                            <button type="button" name="deleteAJAX" id="deleteAJAX" tabindex="6" onclick="eliminarAjax()">Eliminar</button>
                         </form>
                     </section>
 

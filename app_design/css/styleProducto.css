@@ -110,5 +110,24 @@ tbody tr:nth-child(odd) {background: #FFF}
     position: relative;
     margin: 15px 15px;
 }
+#btn_guardar
+{
+    border: 3px solid #008E8E;
+    background: #3AB0B0;
+    color: #333;
+    height: 34px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#deleteAJAX
+{
+    border: 3px solid #008E8E;
+    background: #3AB0B0;
+    color: #333;
+    height: 34px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
