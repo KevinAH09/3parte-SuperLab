@@ -43,8 +43,8 @@ INSERT INTO `tbl_posts` (`id`, `post`, `date`, `tbl_posts_id`) VALUES
 (65, 'holaa', '2021-05-06 16:18:31', NULL),
 (85, 'dd', '2021-05-06 16:45:13', 64),
 (88, 'ddsdsd', '2021-05-06 16:45:22', 65),
-(92, 'ddsds', '2021-05-06 17:45:52', 88),
-(103, 'h<br> <img src=\"app_core/resources/files/gallina.png\" alt=\"\" title=\"\" width=\"40%\"/>', '2021-05-06 19:42:37', 65);
+(92, 'ddsds', '2021-05-06 17:45:52', 88);
+
 
 --
 -- Índices para tablas volcadas
