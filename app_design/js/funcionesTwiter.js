@@ -5,7 +5,6 @@ function buscarAjax() {
 
   axios.post('index.php', formdata)
     .then(function (response) { 
-      console.log(response.data);
       recargarElemento("index.php", "main_panel", formdata);
     })
     .catch(function (error) { 

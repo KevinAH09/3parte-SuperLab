@@ -1,6 +1,5 @@
 <?php
 
-//requerimos de la conexion a la BD
 require_once(__CON_PATH . "conexionProducto.php");
 
 class MDL_producto

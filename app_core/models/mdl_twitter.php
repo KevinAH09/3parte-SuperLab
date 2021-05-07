@@ -1,6 +1,5 @@
 ﻿<?php
 
-//requerimos de la conexion a la BD
 require_once(__CON_PATH . "conexion.php");
 
 class MDL_twitter
@@ -13,7 +12,6 @@ class MDL_twitter
 		$this->conexion = new Conexion();
 	}
 
-	//Función para obtener registros
 	public function get_tweets()
 	{
 
@@ -29,15 +27,13 @@ class MDL_twitter
 									   FROM tbl_posts WHERE tbl_posts.tbl_posts_id = $id
 									   ORDER BY tbl_posts.id DESC");
 
-		$posts = array(); //matriz
+		$posts = array(); 
 		$num_fila = 0;
-
-		//obtenemos cada registro y cada campo
 		while ($fila = $this->conexion->extraer_registro()) {
-			$posts[$num_fila][0] = $fila[0]; //id
-			$posts[$num_fila][1] = $fila[1]; //detalle del post
+			$posts[$num_fila][0] = $fila[0]; 
+			$posts[$num_fila][1] = $fila[1]; 
 			$posts[$num_fila][2] = $fila[2];
-			$posts[$num_fila][3] = $fila[3]; //fecha
+			$posts[$num_fila][3] = $fila[3]; 
 			$num_fila++;
 		}
 
@@ -50,15 +46,14 @@ class MDL_twitter
 		$this->conexion->consulta("SELECT tbl_posts.id, tbl_posts.post,tbl_posts.date,tbl_posts.tbl_posts_id 
 									   FROM tbl_posts WHERE tbl_posts.post LIKE '" . $datospost[0] . "%' ORDER BY tbl_posts.id DESC");
 		
-		$posts = array(); //matriz
+		$posts = array();
 		$num_fila = 0;
 
-		//obtenemos cada registro y cada campo
 		while ($fila = $this->conexion->extraer_registro()) {
-			$posts[$num_fila][0] = $fila[0]; //id
-			$posts[$num_fila][1] = $fila[1]; //detalle del post
+			$posts[$num_fila][0] = $fila[0]; 
+			$posts[$num_fila][1] = $fila[1]; 
 			$posts[$num_fila][2] = $fila[2];
-			$posts[$num_fila][3] = $fila[3]; //fecha
+			$posts[$num_fila][3] = $fila[3]; 
 			$num_fila++;
 		}
 
@@ -72,7 +67,6 @@ class MDL_twitter
 
 		$num_fila = 0;
 
-		//obtenemos cada registro y cada campo
 		while ($fila = $this->conexion->extraer_registro()) {
 			$objeto = new stdClass();
 			$objeto->post =  $fila;
@@ -99,7 +93,6 @@ class MDL_twitter
 		return $postpadres;
 	}
 
-	//Función para insertar registros
 
 	public function insertar_post($datospost = array(), $id_res)
 	{
