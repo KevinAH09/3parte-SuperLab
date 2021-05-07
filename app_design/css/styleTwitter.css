@@ -53,7 +53,7 @@
 	position: relative;
 }
 .post_block:hover{
-	background: rgb(144, 136, 145);
+	background: rgb(189, 192, 205);
 }
 
 .published_date{
@@ -139,7 +139,18 @@
 	box-shadow: 2px 2px 15px #000;
 }
 
-
+.boton_crud{
+	position: relative;
+	bottom: 2px;
+	border: 1px solid #008E8E;
+	background: #3AB0B0;
+	color: #FFF;
+	height: 34px;
+	width: 34px;
+	border-radius: 100px;
+	cursor: pointer;
+	font-weight: bold;
+}
 #panel_app{
 	position: relative;
 	border: 1px solid #DDD;
