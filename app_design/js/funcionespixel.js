@@ -40,7 +40,7 @@ window.onload = function () {
             x: nuevaPosicionX,
             y: nuevaPosicionY,
             c: color,
-            t:tamano
+            t: tamano
         });
     }
 
@@ -48,15 +48,9 @@ window.onload = function () {
      * Funcion dibuja la linea
      */
     function dibujarLinea(event) {
-        // event.preventDefault();
         let posicion2 = miCanvas.getBoundingClientRect()
         if (pintar) {
             let ctx = miCanvas.getContext('2d')
-            // Estilos de linea
-            // ctx.lineJoin = ctx.lineCap = 'round';
-            // ctx.lineWidth = 5;
-            // // Color de la linea
-            // ctx.strokeStyle = '	#8B0000';
             // Marca el nuevo punto
             if (event.changedTouches == undefined) {
                 scaleX = canvas.width / posicion2.width;
@@ -64,7 +58,7 @@ window.onload = function () {
                 nuevaPosicionX = (event.clientX - posicion2.left) * scaleX;
                 nuevaPosicionY = (event.clientY - posicion2.top) * scaleY
                 color = document.getElementById("muestrario").value;
-                tamano=tam.value;
+                tamano = tam.value;
             }
             // Guarda el trazado
             guardarTrazado();
@@ -76,6 +70,7 @@ window.onload = function () {
                     // ctx.lineTo(punto.x, punto.y);
                     ctx.fillStyle = segmento[0].c;
                     ctx.fillRect(punto.x, punto.y, segmento[0].t, segmento[0].t);
+                    ctx.fill();
                 });
             });
             ctx.stroke();
@@ -128,7 +123,7 @@ window.onload = function () {
     var input2 = document.getElementById('size')
     input2.addEventListener('change', cambiarLabel);
 
-    function cambiarLabel(){
+    function cambiarLabel() {
         document.getElementById('lblTam').innerHTML = document.getElementById('size').value;
     }
 

@@ -54,7 +54,6 @@ class CTR_twitter
     }
     if ($nombreimagen != "") {
       if ($this->rstrpos($nombreimagen) != "false") {
-        echo "dsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsdfffffffffffffffff  ".$this->rstrpos($nombreimagen);
         unlink($this->rstrpos($nombreimagen));
       }
      
@@ -97,7 +96,7 @@ class CTR_twitter
       $target_file = $target_dir . basename($_FILES["txt_file"]["name"]);
       move_uploaded_file($_FILES["txt_file"]["tmp_name"], $target_file);
 
-      $img = "<br> <img src='$target_file' alt='' title='' width='300'/>";
+      $img = "<br> <img src='$target_file' alt='' title='' width='40%'/>";
     }
 
     return $img;
