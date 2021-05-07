@@ -49,7 +49,20 @@ class MDL_twitter
 
 		$this->conexion->consulta("SELECT tbl_posts.id, tbl_posts.post,tbl_posts.date,tbl_posts.tbl_posts_id 
 									   FROM tbl_posts WHERE tbl_posts.post LIKE '" . $datospost[0] . "%' ORDER BY tbl_posts.id DESC");
-		return $this->extraerDatos();
+		
+		$posts = array(); //matriz
+		$num_fila = 0;
+
+		//obtenemos cada registro y cada campo
+		while ($fila = $this->conexion->extraer_registro()) {
+			$posts[$num_fila][0] = $fila[0]; //id
+			$posts[$num_fila][1] = $fila[1]; //detalle del post
+			$posts[$num_fila][2] = $fila[2];
+			$posts[$num_fila][3] = $fila[3]; //fecha
+			$num_fila++;
+		}
+
+		return $posts;
 	}
 	public function extraerDatos()
 	{
