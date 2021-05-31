@@ -4,9 +4,8 @@ require_once(__LIB_PATH . "html.php");
 require_once(__CTR_PATH . "ctr_twitter.php");
 
 $html = new HTML();
-$twitter = new CTR_twitter(); //variable del Controlador
+$twitter = new CTR_twitter();
 $htmlpost = "";
-//Evento click (PUBLICAR) se activa al hacer click en el boton via POST
 if (isset($_POST['btn_save'])) {
     $twitter->btn_save_click();
 }
